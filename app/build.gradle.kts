@@ -38,8 +38,22 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // --- НАЧАЛО: НАСТРОЙКА ПОДПИСИ ---
+    signingConfigs {
+        create("release") {
+            storeFile = file("my-release-key.jks")
+            storePassword = "kozakpass"
+            keyAlias = "my-alias"
+            keyPassword = "kozakpass"
+        }
+    }
+    // --- КОНЕЦ: НАСТРОЙКА ПОДПИСИ ---
+
     buildTypes {
         release {
+            // --- ПРИМЕНЯЕМ ПОДПИСЬ ---
+            signingConfig = signingConfigs.getByName("release")
+            
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -66,7 +80,6 @@ android {
             jniLibs.srcDirs("libs")
         }
     }
-
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -131,7 +144,6 @@ android {
             useLegacyPackaging = true
         }
     }
-
 }
 
 dependencies {
