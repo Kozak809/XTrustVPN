@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.v2ray.ang.app-mergeFdroidDebugResources-64:/values-he/values-he.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Kozak\\.gradle\\caches\\9.2.1\\transforms\\2d1678eacc0b0cf2995ca69a44df24d9\\workspace\\transformed\\zxing-android-embedded-4.3.0\\res\\values-he\\values-he.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,111,161,296",
+                        "endColumns": "55,49,134,89",
+                        "endOffsets": "106,156,291,381"
+                    }
+                }
+            ]
+        }
+    ]
+}

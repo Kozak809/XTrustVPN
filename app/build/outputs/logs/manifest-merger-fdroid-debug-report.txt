@@ -1,0 +1,1172 @@
+-- Merging decision tree log ---
+action#com.v2ray.ang.fdroid.action.widget.click
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:198:17-79
+	android:name
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:198:25-76
+action#com.v2ray.ang.fdroid.action.activity
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:199:17-75
+	android:name
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:199:25-72
+provider#androidx.startup.InitializationProvider
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:247:9-258:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:29:9-37:20
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:29:9-37:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:251:13-31
+	android:authorities
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:249:13-68
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:250:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:248:13-67
+provider#androidx.core.content.FileProvider
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:260:9-268:20
+	android:grantUriPermissions
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:264:13-47
+	android:authorities
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:262:13-57
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:263:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:261:13-62
+manifest
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:2:1-272:12
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:2:1-272:12
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:2:1-272:12
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:2:1-272:12
+MERGED from [libv2ray.aar] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\02eb3dc575fa93e0f177ba10f45472bc\workspace\transformed\libv2ray\AndroidManifest.xml:1:1-2:50
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:2:1-22:12
+MERGED from [androidx.databinding:viewbinding:8.13.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\76e4146c01887929006be39966d83316\workspace\transformed\viewbinding-8.13.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.13.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f0dddb6590faa88ad3c385db2cd7fcc0\workspace\transformed\material-1.13.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\10ae8d4668a28f836aef35340ef1b79e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.GrenderG:Toasty:1.5.2] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\5c8c61bea9fcb2df54a22a0e7d73a0e5\workspace\transformed\Toasty-1.5.2\AndroidManifest.xml:2:1-11:12
+MERGED from [io.coil-kt.coil3:coil-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c4c57c628aceb1eede8c030bee6bf7db\workspace\transformed\coil-release\AndroidManifest.xml:2:1-7:12
+MERGED from [io.coil-kt.coil3:coil-core-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\45dcb42e08ab62b5929bca0fcec617a2\workspace\transformed\coil-core-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ba3e45a834737b2d9c477302b4c1740\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.preference:preference-ktx:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0f989806693b1b69fc2f97c4a10be9e0\workspace\transformed\preference-ktx-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ec916662b94ee52ca5c2f7fd506fc5e2\workspace\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.camera:camera-video:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c09b858c2371a63276e492f0b78e380d\workspace\transformed\camera-video-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f826ea7f4975b2ed07b86e8f7b906871\workspace\transformed\camera-lifecycle-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:17:1-36:12
+MERGED from [androidx.camera:camera-view:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a0a310fef65af11b64b46f6280aad6cd\workspace\transformed\camera-view-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f62fe41e9d517cb4a90c8259c5b362e4\workspace\transformed\appcompat-1.7.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\aeeaad6ed3a6bae9759f8c548dd01367\workspace\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\160a07e0b0c38232a56b398aa1526fe7\workspace\transformed\recyclerview-1.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d434d32363d9c24c4df1aa9040e3f67a\workspace\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\1607a2179335b471ec96b8d92ba0fd41\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\16ef182ea256acad090cc207c742fdf2\workspace\transformed\activity-ktx-1.10.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\492674c5305d523f94978289fbd0c054\workspace\transformed\activity-1.10.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.blacksquircle.ui:editorkit:2.9.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b17d66e4552b336749f68f69791742bf\workspace\transformed\editorkit-2.9.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e0f29dcf2cee5dd1deb890e69a2cf004\workspace\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f1921c98ca7a2123f7b962fe9241e503\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e4d4df0f283bf7b1d9119c1389db805c\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7ee63490680658317a21af88521c34de\workspace\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\41bab2ed08064a4bcaa2d594856fa34b\workspace\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\128d6df4c2a05e66b5e20d7e9272e328\workspace\transformed\transition-1.5.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c6902b6f663715720509e0350360e4b5\workspace\transformed\dynamicanimation-1.1.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a094e7393ea175d157ad52c863ba895a\workspace\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8c2a3d21cd8a696b05f8884780e7d3a2\workspace\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.work:work-runtime-ktx:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4dbec6999a33ae069a6a3134193837fa\workspace\transformed\work-runtime-ktx-2.10.5\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:17:1-145:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\71627e2a343aa2155281bc4fdc923692\workspace\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e6d23e85acb14b28fdd1ee3f98dcba15\workspace\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b598c55295ac504e2ed38051a85f35df\workspace\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b851c828ca2ce75cf080ebe6955b9bfe\workspace\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\3b75124ff6545709bb568495667295ff\workspace\transformed\graphics-shapes-release\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7f2a637f07344eeef7a6f6b9f97324f6\workspace\transformed\lifecycle-service-2.9.4\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\56fbedc47c47817dadfb99cc9e66a306\workspace\transformed\lifecycle-runtime-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c7e53f0a2cd7d91fce22c0056b5fcd3e\workspace\transformed\savedstate-ktx-1.3.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-android:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\508ec6d2595d78e29d9ca44d544b86d4\workspace\transformed\savedstate-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\37cabbb8bc2b73e1b04a31cd13abeda7\workspace\transformed\lifecycle-viewmodel-2.9.4\AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef0a962e680d818a14783f29cd507f6e\workspace\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e1f3aea04a83ee902db5b5d658ffeb4f\workspace\transformed\lifecycle-livedata-core-2.9.4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b96f0c650d1fa706d4e301fcc6fff988\workspace\transformed\lifecycle-runtime-ktx\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\61b9fcddeeab90f22173a9f3005ec892\workspace\transformed\lifecycle-livedata-core-ktx-2.9.4\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ad209887d31c3d3f6f88e5fc7250fd0\workspace\transformed\lifecycle-livedata-2.9.4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\497b6c2fac7b157b7102a922ce077682\workspace\transformed\lifecycle-livedata-ktx-2.9.4\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b162a93a502e1083397b85d4ccbdc5f0\workspace\transformed\lifecycle-viewmodel-ktx-2.9.4\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a59e2e5eefeb0667cec0b0bc6395c2da\workspace\transformed\lifecycle-viewmodel-savedstate-release\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ecd13dec4efa908af503453f997e79ac\workspace\transformed\core-ktx-1.16.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4070b4b32c2594752a3c425463727349\workspace\transformed\flexbox-3.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\efad30aaa45223f8846e35278b23e377\workspace\transformed\room-ktx-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\084dd2e703af478f8dfa49de6f033224\workspace\transformed\core-viewtree-1.0.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\30b31039de53736c33d29002bcedb862\workspace\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\838f2ec6859becd572e31ca188c4defb\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef14ca00f92a27efc27c5492473b134d\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8e0be8e7645b3454294b7ad63275d535\workspace\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7e0dbfb29179e078521e33be24cf2a8a\workspace\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f696a7741f162f9289aa4ad10f60b824\workspace\transformed\sqlite-2.4.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.tencent:mmkv-static:1.3.14] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4efe27f43ec41200c56ad4b78139fe8f\workspace\transformed\mmkv-static-1.3.14\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\64f4354d60202d4ee4d5925df6042dd6\workspace\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\27b197df2d7dc77d604057a3c4582e44\workspace\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d247da1ed8070899cdd71a032fb26462\workspace\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\194aac345723ece81dff5d731df6a12e\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\50fd49e7b2d9d3a3ebcb3ea7505b4dd0\workspace\transformed\exifinterface-1.3.7\AndroidManifest.xml:17:1-24:12
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:17:1-56:12
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c9f3c91a3478fb1b085589429746dfd2\workspace\transformed\multidex-2.0.1\AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:2:11-69
+	tools:ignore
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:4:5-43
+supports-screens
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:6:5-11:40
+	android:largeScreens
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:8:9-36
+	android:smallScreens
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:10:9-36
+	android:normalScreens
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:9:9-37
+	android:xlargeScreens
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:11:9-37
+	android:anyDensity
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:7:9-34
+uses-sdk
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:13:5-15:66
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:13:5-15:66
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:13:5-15:66
+MERGED from [libv2ray.aar] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\02eb3dc575fa93e0f177ba10f45472bc\workspace\transformed\libv2ray\AndroidManifest.xml:2:1-39
+MERGED from [libv2ray.aar] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\02eb3dc575fa93e0f177ba10f45472bc\workspace\transformed\libv2ray\AndroidManifest.xml:2:1-39
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:6:5-44
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:6:5-44
+MERGED from [androidx.databinding:viewbinding:8.13.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\76e4146c01887929006be39966d83316\workspace\transformed\viewbinding-8.13.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.13.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\76e4146c01887929006be39966d83316\workspace\transformed\viewbinding-8.13.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.13.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f0dddb6590faa88ad3c385db2cd7fcc0\workspace\transformed\material-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.13.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f0dddb6590faa88ad3c385db2cd7fcc0\workspace\transformed\material-1.13.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\10ae8d4668a28f836aef35340ef1b79e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\10ae8d4668a28f836aef35340ef1b79e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:5:5-44
+MERGED from [com.github.GrenderG:Toasty:1.5.2] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\5c8c61bea9fcb2df54a22a0e7d73a0e5\workspace\transformed\Toasty-1.5.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:Toasty:1.5.2] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\5c8c61bea9fcb2df54a22a0e7d73a0e5\workspace\transformed\Toasty-1.5.2\AndroidManifest.xml:7:5-9:41
+MERGED from [io.coil-kt.coil3:coil-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c4c57c628aceb1eede8c030bee6bf7db\workspace\transformed\coil-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c4c57c628aceb1eede8c030bee6bf7db\workspace\transformed\coil-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-core-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\45dcb42e08ab62b5929bca0fcec617a2\workspace\transformed\coil-core-release\AndroidManifest.xml:5:5-44
+MERGED from [io.coil-kt.coil3:coil-core-android:3.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\45dcb42e08ab62b5929bca0fcec617a2\workspace\transformed\coil-core-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ba3e45a834737b2d9c477302b4c1740\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ba3e45a834737b2d9c477302b4c1740\workspace\transformed\appcompat-resources-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.preference:preference-ktx:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0f989806693b1b69fc2f97c4a10be9e0\workspace\transformed\preference-ktx-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0f989806693b1b69fc2f97c4a10be9e0\workspace\transformed\preference-ktx-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ec916662b94ee52ca5c2f7fd506fc5e2\workspace\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ec916662b94ee52ca5c2f7fd506fc5e2\workspace\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.camera:camera-video:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c09b858c2371a63276e492f0b78e380d\workspace\transformed\camera-video-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-video:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c09b858c2371a63276e492f0b78e380d\workspace\transformed\camera-video-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f826ea7f4975b2ed07b86e8f7b906871\workspace\transformed\camera-lifecycle-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-lifecycle:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f826ea7f4975b2ed07b86e8f7b906871\workspace\transformed\camera-lifecycle-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.camera:camera-view:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a0a310fef65af11b64b46f6280aad6cd\workspace\transformed\camera-view-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.camera:camera-view:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a0a310fef65af11b64b46f6280aad6cd\workspace\transformed\camera-view-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f62fe41e9d517cb4a90c8259c5b362e4\workspace\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f62fe41e9d517cb4a90c8259c5b362e4\workspace\transformed\appcompat-1.7.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\aeeaad6ed3a6bae9759f8c548dd01367\workspace\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\aeeaad6ed3a6bae9759f8c548dd01367\workspace\transformed\fragment-ktx-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\160a07e0b0c38232a56b398aa1526fe7\workspace\transformed\recyclerview-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\160a07e0b0c38232a56b398aa1526fe7\workspace\transformed\recyclerview-1.4.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d434d32363d9c24c4df1aa9040e3f67a\workspace\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d434d32363d9c24c4df1aa9040e3f67a\workspace\transformed\viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\1607a2179335b471ec96b8d92ba0fd41\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\1607a2179335b471ec96b8d92ba0fd41\workspace\transformed\fragment-1.5.4\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\16ef182ea256acad090cc207c742fdf2\workspace\transformed\activity-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\16ef182ea256acad090cc207c742fdf2\workspace\transformed\activity-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\492674c5305d523f94978289fbd0c054\workspace\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.10.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\492674c5305d523f94978289fbd0c054\workspace\transformed\activity-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [com.blacksquircle.ui:editorkit:2.9.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b17d66e4552b336749f68f69791742bf\workspace\transformed\editorkit-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [com.blacksquircle.ui:editorkit:2.9.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b17d66e4552b336749f68f69791742bf\workspace\transformed\editorkit-2.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e0f29dcf2cee5dd1deb890e69a2cf004\workspace\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e0f29dcf2cee5dd1deb890e69a2cf004\workspace\transformed\swiperefreshlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f1921c98ca7a2123f7b962fe9241e503\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f1921c98ca7a2123f7b962fe9241e503\workspace\transformed\emoji2-views-helper-1.3.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e4d4df0f283bf7b1d9119c1389db805c\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e4d4df0f283bf7b1d9119c1389db805c\workspace\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7ee63490680658317a21af88521c34de\workspace\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7ee63490680658317a21af88521c34de\workspace\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\41bab2ed08064a4bcaa2d594856fa34b\workspace\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\41bab2ed08064a4bcaa2d594856fa34b\workspace\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\128d6df4c2a05e66b5e20d7e9272e328\workspace\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\128d6df4c2a05e66b5e20d7e9272e328\workspace\transformed\transition-1.5.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c6902b6f663715720509e0350360e4b5\workspace\transformed\dynamicanimation-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c6902b6f663715720509e0350360e4b5\workspace\transformed\dynamicanimation-1.1.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a094e7393ea175d157ad52c863ba895a\workspace\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a094e7393ea175d157ad52c863ba895a\workspace\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8c2a3d21cd8a696b05f8884780e7d3a2\workspace\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8c2a3d21cd8a696b05f8884780e7d3a2\workspace\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4dbec6999a33ae069a6a3134193837fa\workspace\transformed\work-runtime-ktx-2.10.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime-ktx:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4dbec6999a33ae069a6a3134193837fa\workspace\transformed\work-runtime-ktx-2.10.5\AndroidManifest.xml:20:5-44
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:21:5-44
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:21:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\71627e2a343aa2155281bc4fdc923692\workspace\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\71627e2a343aa2155281bc4fdc923692\workspace\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e6d23e85acb14b28fdd1ee3f98dcba15\workspace\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e6d23e85acb14b28fdd1ee3f98dcba15\workspace\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b598c55295ac504e2ed38051a85f35df\workspace\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b598c55295ac504e2ed38051a85f35df\workspace\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b851c828ca2ce75cf080ebe6955b9bfe\workspace\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b851c828ca2ce75cf080ebe6955b9bfe\workspace\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\3b75124ff6545709bb568495667295ff\workspace\transformed\graphics-shapes-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-shapes-android:1.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\3b75124ff6545709bb568495667295ff\workspace\transformed\graphics-shapes-release\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7f2a637f07344eeef7a6f6b9f97324f6\workspace\transformed\lifecycle-service-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7f2a637f07344eeef7a6f6b9f97324f6\workspace\transformed\lifecycle-service-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\56fbedc47c47817dadfb99cc9e66a306\workspace\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\56fbedc47c47817dadfb99cc9e66a306\workspace\transformed\lifecycle-runtime-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c7e53f0a2cd7d91fce22c0056b5fcd3e\workspace\transformed\savedstate-ktx-1.3.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c7e53f0a2cd7d91fce22c0056b5fcd3e\workspace\transformed\savedstate-ktx-1.3.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\508ec6d2595d78e29d9ca44d544b86d4\workspace\transformed\savedstate-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-android:1.3.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\508ec6d2595d78e29d9ca44d544b86d4\workspace\transformed\savedstate-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\37cabbb8bc2b73e1b04a31cd13abeda7\workspace\transformed\lifecycle-viewmodel-2.9.4\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\37cabbb8bc2b73e1b04a31cd13abeda7\workspace\transformed\lifecycle-viewmodel-2.9.4\AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef0a962e680d818a14783f29cd507f6e\workspace\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef0a962e680d818a14783f29cd507f6e\workspace\transformed\lifecycle-viewmodel-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e1f3aea04a83ee902db5b5d658ffeb4f\workspace\transformed\lifecycle-livedata-core-2.9.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\e1f3aea04a83ee902db5b5d658ffeb4f\workspace\transformed\lifecycle-livedata-core-2.9.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b96f0c650d1fa706d4e301fcc6fff988\workspace\transformed\lifecycle-runtime-ktx\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b96f0c650d1fa706d4e301fcc6fff988\workspace\transformed\lifecycle-runtime-ktx\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\61b9fcddeeab90f22173a9f3005ec892\workspace\transformed\lifecycle-livedata-core-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\61b9fcddeeab90f22173a9f3005ec892\workspace\transformed\lifecycle-livedata-core-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ad209887d31c3d3f6f88e5fc7250fd0\workspace\transformed\lifecycle-livedata-2.9.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\0ad209887d31c3d3f6f88e5fc7250fd0\workspace\transformed\lifecycle-livedata-2.9.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\497b6c2fac7b157b7102a922ce077682\workspace\transformed\lifecycle-livedata-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\497b6c2fac7b157b7102a922ce077682\workspace\transformed\lifecycle-livedata-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b162a93a502e1083397b85d4ccbdc5f0\workspace\transformed\lifecycle-viewmodel-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b162a93a502e1083397b85d4ccbdc5f0\workspace\transformed\lifecycle-viewmodel-ktx-2.9.4\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a59e2e5eefeb0667cec0b0bc6395c2da\workspace\transformed\lifecycle-viewmodel-savedstate-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate-android:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a59e2e5eefeb0667cec0b0bc6395c2da\workspace\transformed\lifecycle-viewmodel-savedstate-release\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ecd13dec4efa908af503453f997e79ac\workspace\transformed\core-ktx-1.16.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ecd13dec4efa908af503453f997e79ac\workspace\transformed\core-ktx-1.16.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4070b4b32c2594752a3c425463727349\workspace\transformed\flexbox-3.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4070b4b32c2594752a3c425463727349\workspace\transformed\flexbox-3.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\efad30aaa45223f8846e35278b23e377\workspace\transformed\room-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\efad30aaa45223f8846e35278b23e377\workspace\transformed\room-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\084dd2e703af478f8dfa49de6f033224\workspace\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\084dd2e703af478f8dfa49de6f033224\workspace\transformed\core-viewtree-1.0.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\30b31039de53736c33d29002bcedb862\workspace\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\30b31039de53736c33d29002bcedb862\workspace\transformed\annotation-experimental-1.4.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\838f2ec6859becd572e31ca188c4defb\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\838f2ec6859becd572e31ca188c4defb\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef14ca00f92a27efc27c5492473b134d\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef14ca00f92a27efc27c5492473b134d\workspace\transformed\tracing-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8e0be8e7645b3454294b7ad63275d535\workspace\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing-ktx:1.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\8e0be8e7645b3454294b7ad63275d535\workspace\transformed\tracing-ktx-1.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7e0dbfb29179e078521e33be24cf2a8a\workspace\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\7e0dbfb29179e078521e33be24cf2a8a\workspace\transformed\sqlite-framework-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f696a7741f162f9289aa4ad10f60b824\workspace\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f696a7741f162f9289aa4ad10f60b824\workspace\transformed\sqlite-2.4.0\AndroidManifest.xml:20:5-44
+MERGED from [com.tencent:mmkv-static:1.3.14] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4efe27f43ec41200c56ad4b78139fe8f\workspace\transformed\mmkv-static-1.3.14\AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent:mmkv-static:1.3.14] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\4efe27f43ec41200c56ad4b78139fe8f\workspace\transformed\mmkv-static-1.3.14\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\64f4354d60202d4ee4d5925df6042dd6\workspace\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\64f4354d60202d4ee4d5925df6042dd6\workspace\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\27b197df2d7dc77d604057a3c4582e44\workspace\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\27b197df2d7dc77d604057a3c4582e44\workspace\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d247da1ed8070899cdd71a032fb26462\workspace\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\d247da1ed8070899cdd71a032fb26462\workspace\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\194aac345723ece81dff5d731df6a12e\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\194aac345723ece81dff5d731df6a12e\workspace\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\50fd49e7b2d9d3a3ebcb3ea7505b4dd0\workspace\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.7] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\50fd49e7b2d9d3a3ebcb3ea7505b4dd0\workspace\transformed\exifinterface-1.3.7\AndroidManifest.xml:20:5-22:41
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c9f3c91a3478fb1b085589429746dfd2\workspace\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c9f3c91a3478fb1b085589429746dfd2\workspace\transformed\multidex-2.0.1\AndroidManifest.xml:20:5-43
+	tools:overrideLibrary
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:15:9-63
+	android:targetSdkVersion
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:14:9-35
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+uses-feature#android.hardware.camera
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:17:5-19:36
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:8:5-10:36
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:8:5-10:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:19:9-33
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:18:9-47
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:20:5-22:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+	android:required
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:22:9-33
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:21:9-57
+uses-feature#android.software.leanback
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:23:5-25:36
+	android:required
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:25:9-33
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:24:9-49
+uses-feature#android.hardware.touchscreen
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:26:5-28:36
+	android:required
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:28:9-33
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:27:9-52
+uses-permission#android.permission.QUERY_ALL_PACKAGES
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:31:5-33:53
+	tools:ignore
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:33:9-50
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:32:9-61
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:34:5-79
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:34:22-76
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:35:5-79
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:35:22-76
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:36:5-67
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:36:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:37:5-80
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:37:22-77
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:38:5-65
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:12:5-65
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:12:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:22:5-65
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:38:22-62
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:39:5-77
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:26:5-77
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:26:5-77
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:39:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE_SPECIAL_USE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:40:5-42:38
+	android:minSdkVersion
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:42:9-35
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:41:9-73
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:44:5-77
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:44:22-74
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:45:5-76
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:45:22-73
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:46:5-81
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:25:5-81
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:46:22-78
+application
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:48:5-270:19
+INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:48:5-270:19
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:14:5-20:19
+MERGED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:14:5-20:19
+MERGED from [com.google.android.material:material:1.13.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f0dddb6590faa88ad3c385db2cd7fcc0\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.13.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f0dddb6590faa88ad3c385db2cd7fcc0\workspace\transformed\material-1.13.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\10ae8d4668a28f836aef35340ef1b79e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\10ae8d4668a28f836aef35340ef1b79e\workspace\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
+MERGED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:23:5-34:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:23:5-28:19
+MERGED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:23:5-28:19
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:28:5-143:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\838f2ec6859becd572e31ca188c4defb\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\838f2ec6859becd572e31ca188c4defb\workspace\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\97faceeeacda89b1181164aad930810a\workspace\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:46:5-54:19
+MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:46:5-54:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:55:9-35
+	android:label
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:53:9-41
+	tools:targetApi
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:58:9-28
+	android:icon
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:52:9-43
+	android:allowBackup
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:50:9-35
+	android:banner
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:51:9-43
+	android:theme
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:56:9-48
+	android:networkSecurityConfig
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:54:9-69
+	android:usesCleartextTraffic
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:57:9-44
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:49:9-39
+activity#com.v2ray.ang.ui.MainActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:60:9-78:20
+	android:launchMode
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:63:13-44
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:62:13-36
+	android:theme
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:64:13-64
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:61:13-44
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER+category:name:android.intent.category.LEANBACK_LAUNCHER
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:65:13-70:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:66:17-69
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:66:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:68:17-77
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:68:27-74
+category#android.intent.category.LEANBACK_LAUNCHER
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:69:17-86
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:69:27-83
+intent-filter#action:name:android.service.quicksettings.action.QS_TILE_PREFERENCES
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:71:13-73:29
+action#android.service.quicksettings.action.QS_TILE_PREFERENCES
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:72:17-99
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:72:25-96
+meta-data#android.app.shortcuts
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:75:13-77:53
+	android:resource
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:77:17-50
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:76:17-53
+activity#com.v2ray.ang.ui.ServerActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:79:9-82:60
+	android:windowSoftInputMode
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:82:13-57
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:81:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:80:13-46
+activity#com.v2ray.ang.ui.ServerCustomConfigActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:83:9-86:60
+	android:windowSoftInputMode
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:86:13-57
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:85:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:84:13-58
+activity#com.v2ray.ang.ui.SettingsActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:87:9-89:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:89:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:88:13-48
+activity#com.v2ray.ang.ui.PerAppProxyActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:90:9-92:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:92:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:91:13-51
+activity#com.v2ray.ang.ui.ScannerActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:93:9-95:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:95:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:94:13-47
+activity#com.v2ray.ang.ui.LogcatActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:96:9-98:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:98:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:97:13-46
+activity#com.v2ray.ang.ui.RoutingSettingActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:99:9-101:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:101:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:100:13-54
+activity#com.v2ray.ang.ui.RoutingEditActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:102:9-104:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:104:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:103:13-51
+activity#com.v2ray.ang.ui.SubSettingActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:105:9-107:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:107:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:106:13-50
+activity#com.v2ray.ang.ui.UserAssetActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:108:9-110:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:110:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:109:13-49
+activity#com.v2ray.ang.ui.UserAssetUrlActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:111:9-113:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:113:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:112:13-52
+activity#com.v2ray.ang.ui.SubEditActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:115:9-117:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:117:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:116:13-47
+activity#com.v2ray.ang.ui.ScScannerActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:118:9-120:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:120:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:119:13-49
+activity#com.v2ray.ang.ui.ScSwitchActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:121:9-126:71
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:125:13-51
+	android:excludeFromRecents
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:123:13-46
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:124:13-37
+	android:theme
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:126:13-68
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:122:13-48
+activity#com.v2ray.ang.ui.UrlSchemeActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:128:9-146:20
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:130:13-36
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:129:13-49
+intent-filter#action:name:android.intent.action.SEND+category:name:android.intent.category.DEFAULT+data:mimeType:text/plain
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:131:13-135:29
+action#android.intent.action.SEND
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:132:17-69
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:132:25-66
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:133:17-76
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:133:27-73
+data
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:134:17-55
+	android:host
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:143:23-52
+	android:scheme
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:142:23-47
+	android:mimeType
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:134:23-52
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:install-config+data:host:install-sub+data:scheme:v2rayng
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:136:13-145:29
+action#android.intent.action.VIEW
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:137:17-69
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:137:25-66
+category#android.intent.category.BROWSABLE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:139:17-78
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:139:27-75
+activity#com.v2ray.ang.ui.CheckUpdateActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:147:9-149:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:149:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:148:13-51
+activity#com.v2ray.ang.ui.AboutActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:150:9-152:40
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:152:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:151:13-45
+service#com.v2ray.ang.service.V2RayVpnService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:154:9-171:19
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:161:13-51
+	android:enabled
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:156:13-35
+	android:label
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:159:13-45
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:157:13-37
+	android:permission
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:160:13-69
+	android:foregroundServiceType
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:158:13-55
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:155:13-52
+intent-filter#action:name:android.net.VpnService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:162:13-164:29
+action#android.net.VpnService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:163:17-65
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:163:25-62
+meta-data#android.net.VpnService.SUPPORTS_ALWAYS_ON
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:165:13-167:40
+	android:value
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:167:17-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:166:17-73
+property#android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:168:13-170:39
+	android:value
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:170:17-36
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:169:17-76
+service#com.v2ray.ang.service.V2RayProxyOnlyService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:173:9-182:19
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:178:13-51
+	android:label
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:177:13-45
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:175:13-37
+	android:foregroundServiceType
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:176:13-55
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:174:13-58
+service#com.v2ray.ang.service.V2RayTestService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:184:9-187:54
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:187:13-51
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:186:13-37
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:185:13-53
+receiver#com.v2ray.ang.receiver.WidgetProvider
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:189:9-201:20
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:192:13-51
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:191:13-36
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:190:13-52
+meta-data#android.appwidget.provider
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:193:13-195:63
+	android:resource
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:195:17-60
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:194:17-58
+intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE+action:name:com.v2ray.ang.fdroid.action.activity+action:name:com.v2ray.ang.fdroid.action.widget.click
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:196:13-200:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:197:17-84
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:197:25-81
+receiver#com.v2ray.ang.receiver.BootReceiver
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:202:9-209:20
+	android:label
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:205:13-41
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:204:13-36
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:203:13-50
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:206:13-208:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:207:17-79
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:207:25-76
+service#com.v2ray.ang.service.QSTileService
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:211:9-226:19
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:218:13-51
+	android:label
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:216:13-50
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:213:13-36
+	android:permission
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:217:13-77
+	tools:targetApi
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:219:13-33
+	android:icon
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:215:13-50
+	android:foregroundServiceType
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:214:13-55
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:212:13-50
+intent-filter#action:name:android.service.quicksettings.action.QS_TILE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:220:13-222:29
+action#android.service.quicksettings.action.QS_TILE
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:221:17-87
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:221:25-84
+activity#com.v2ray.ang.ui.TaskerActivity
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:228:9-235:20
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:230:13-36
+	android:icon
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:231:13-47
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:229:13-46
+intent-filter#action:name:com.twofortyfouram.locale.intent.action.EDIT_SETTING
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:232:13-234:29
+action#com.twofortyfouram.locale.intent.action.EDIT_SETTING
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:233:17-95
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:233:25-92
+receiver#com.v2ray.ang.receiver.TaskerReceiver
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:237:9-245:20
+	android:process
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:240:13-51
+	android:exported
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:239:13-36
+	tools:ignore
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:241:13-44
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:238:13-52
+intent-filter#action:name:com.twofortyfouram.locale.intent.action.FIRE_SETTING
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:242:13-244:29
+action#com.twofortyfouram.locale.intent.action.FIRE_SETTING
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:243:17-95
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:243:25-92
+meta-data#androidx.work.WorkManagerInitializer
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:253:13-256:39
+REJECTED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:34:13-36:52
+	tools:node
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:256:17-36
+	android:value
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:255:17-49
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:254:17-68
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:265:13-267:55
+	android:resource
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:267:17-52
+	android:name
+		ADDED from C:\Users\Kozak\Desktop\XTrustVPN\app\src\main\AndroidManifest.xml:266:17-67
+activity#io.github.g00fy2.quickie.QRScannerActivity
+ADDED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:15:9-19:45
+	android:screenOrientation
+		ADDED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:17:13-47
+	tools:ignore
+		ADDED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:19:13-42
+	android:theme
+		ADDED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:18:13-58
+	android:name
+		ADDED from [com.github.T8RIN.QuickieExtended:quickie-foss:1.14.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\60ff5889e5e00df34f0d7519c77452f6\workspace\transformed\quickie-foss-1.14.0\AndroidManifest.xml:16:13-70
+service#androidx.camera.core.impl.MetadataHolderService
+ADDED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:29:9-33:78
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:24:9-33:19
+MERGED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:24:9-33:19
+	android:enabled
+		ADDED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:31:13-36
+	android:exported
+		ADDED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:32:13-37
+	tools:ignore
+		ADDED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:33:13-75
+	android:name
+		ADDED from [androidx.camera:camera-core:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6aa8364362771c4a47d6d14b6e35cacb\workspace\transformed\camera-core-1.4.1\AndroidManifest.xml:30:13-75
+meta-data#androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER
+ADDED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:30:13-32:89
+	android:value
+		ADDED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:32:17-86
+	android:name
+		ADDED from [androidx.camera:camera-camera2:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\31645ca574656fd106610d8429bcbade\workspace\transformed\camera-camera2-1.4.1\AndroidManifest.xml:31:17-103
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6392cf44d03fcb87cf23a1390f391a4e\workspace\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+service#androidx.work.multiprocess.RemoteWorkManagerService
+ADDED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:24:9-27:63
+	android:exported
+		ADDED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:26:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:27:13-60
+	android:name
+		ADDED from [androidx.work:work-multiprocess:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\b118e2b103c4ab3161bdde82026664f5\workspace\transformed\work-multiprocess-2.10.5\AndroidManifest.xml:25:13-79
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:23:5-68
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:23:22-65
+service#androidx.work.impl.background.systemalarm.SystemAlarmService
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:39:9-45:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:42:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:43:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:44:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:45:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:41:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:40:13-88
+service#androidx.work.impl.background.systemjob.SystemJobService
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:46:9-52:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:49:13-70
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:50:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:51:13-69
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:52:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:48:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:47:13-84
+service#androidx.work.impl.foreground.SystemForegroundService
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:53:9-59:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:56:13-77
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:57:13-37
+	tools:ignore
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:58:13-60
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:59:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:55:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:54:13-81
+receiver#androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:61:9-66:35
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:64:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:65:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:66:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:63:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:62:13-88
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:67:9-77:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:70:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:71:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:72:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:69:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:68:13-106
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:73:13-76:29
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:74:17-87
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:74:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:75:17-90
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:75:25-87
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:78:9-88:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:81:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:82:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:83:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:80:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:79:13-104
+intent-filter#action:name:android.intent.action.BATTERY_LOW+action:name:android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:84:13-87:29
+action#android.intent.action.BATTERY_OKAY
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:85:17-77
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:85:25-74
+action#android.intent.action.BATTERY_LOW
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:86:17-76
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:86:25-73
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:89:9-99:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:92:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:93:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:94:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:91:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:90:13-104
+intent-filter#action:name:android.intent.action.DEVICE_STORAGE_LOW+action:name:android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:95:13-98:29
+action#android.intent.action.DEVICE_STORAGE_LOW
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:96:17-83
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:96:25-80
+action#android.intent.action.DEVICE_STORAGE_OK
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:97:17-82
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:97:25-79
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:100:9-109:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:103:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:104:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:105:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:102:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:101:13-103
+intent-filter#action:name:android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:106:13-108:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:107:17-79
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:107:25-76
+receiver#androidx.work.impl.background.systemalarm.RescheduleReceiver
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:110:9-121:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:113:13-36
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:114:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:115:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:112:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:111:13-88
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:116:13-120:29
+action#android.intent.action.TIME_SET
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:118:17-73
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:118:25-70
+action#android.intent.action.TIMEZONE_CHANGED
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:119:17-81
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:119:25-78
+receiver#androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:122:9-131:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:125:13-72
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:126:13-37
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:127:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:123:13-99
+intent-filter#action:name:androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:128:13-130:29
+action#androidx.work.impl.background.systemalarm.UpdateProxies
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:129:17-98
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:129:25-95
+receiver#androidx.work.impl.diagnostics.DiagnosticsReceiver
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:132:9-142:20
+	android:enabled
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:135:13-35
+	android:exported
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:136:13-36
+	android:permission
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:137:13-57
+	tools:targetApi
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:138:13-32
+	android:directBootAware
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:134:13-44
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:133:13-78
+intent-filter#action:name:androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:139:13-141:29
+action#androidx.work.diagnostics.REQUEST_DIAGNOSTICS
+ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:140:17-88
+	android:name
+		ADDED from [androidx.work:work-runtime:2.10.5] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\c629612910a2e095de3050945e3696f0\workspace\transformed\work-runtime-2.10.5\AndroidManifest.xml:140:25-85
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6b1eaa21ee0d7dcaaaa3866caf3bfbb9\workspace\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+permission#com.v2ray.ang.fdroid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+uses-permission#com.v2ray.ang.fdroid.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.16.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\6bd1b036f2a32963410429700cb1b0b2\workspace\transformed\core-1.16.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.9.4] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ca963c342d415f6e2bf8f1ad8995cd86\workspace\transformed\lifecycle-process-2.9.4\AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\f91b467eeb1df11c186759f841aba3bc\workspace\transformed\profileinstaller-1.4.1\AndroidManifest.xml:50:25-92
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\a853756879b80409cc567858959873cc\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+uses-feature#android.hardware.camera.front
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+uses-feature#android.hardware.camera.flash
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+uses-feature#android.hardware.screen.landscape
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+uses-feature#android.hardware.wifi
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+	android:required
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+activity#com.journeyapps.barcodescanner.CaptureActivity
+ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+	android:screenOrientation
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+	android:clearTaskOnLaunch
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+	android:stateNotNeeded
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+	android:windowSoftInputMode
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+	android:theme
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+	android:name
+		ADDED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\Kozak\.gradle\caches\9.2.1\transforms\2d1678eacc0b0cf2995ca69a44df24d9\workspace\transformed\zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74

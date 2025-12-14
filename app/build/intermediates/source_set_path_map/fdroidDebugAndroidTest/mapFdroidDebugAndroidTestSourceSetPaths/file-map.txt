@@ -1,0 +1,7 @@
+com.v2ray.ang.test.app-core-1.7.0-0 C:\Users\Kozak\.gradle\caches\9.2.1\transforms\05ffd9b8f0c5e50d7dec23270a50bfe4\workspace\transformed\core-1.7.0\res
+com.v2ray.ang.test.app-tracing-1.2.0-1 C:\Users\Kozak\.gradle\caches\9.2.1\transforms\ef14ca00f92a27efc27c5492473b134d\workspace\transformed\tracing-1.2.0\res
+com.v2ray.ang.test.app-fdroid-2 C:\Users\Kozak\Desktop\XTrustVPN\app\build\generated\res\resValues\androidTest\fdroid\debug
+com.v2ray.ang.test.app-updated_navigation_xml-3 C:\Users\Kozak\Desktop\XTrustVPN\app\build\generated\updated_navigation_xml\fdroidDebugAndroidTest
+com.v2ray.ang.test.app-mergeFdroidDebugAndroidTestResources-4 C:\Users\Kozak\Desktop\XTrustVPN\app\build\intermediates\incremental\fdroidDebugAndroidTest\mergeFdroidDebugAndroidTestResources\merged.dir
+com.v2ray.ang.test.app-mergeFdroidDebugAndroidTestResources-5 C:\Users\Kozak\Desktop\XTrustVPN\app\build\intermediates\incremental\fdroidDebugAndroidTest\mergeFdroidDebugAndroidTestResources\stripped.dir
+com.v2ray.ang.test.app-fdroidDebugAndroidTest-6 C:\Users\Kozak\Desktop\XTrustVPN\app\build\intermediates\merged_res\fdroidDebugAndroidTest\mergeFdroidDebugAndroidTestResources
