@@ -11,4 +11,10 @@
 
     <color name="colorPrimary">#F5F5F5</color>
     <color name="colorAccent">#000000</color>
+    
+    <!-- Dark theme colors -->
+    <color name="bg_dark">#0f0f1e</color>
+    <color name="primary_blue">#4c6ef5</color>
+    <color name="success_green">#51cf66</color>
+    <color name="danger_red">#fa5252</color>
 </resources>
