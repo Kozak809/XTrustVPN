@@ -17,7 +17,7 @@ XTrustVPN/app/release/output.json
 # Ignore build directories and captures
 /build
 /captures
-XTrustVPN/app/build
+app/build
 XTrustVPN/build
 XTrustVPN/local.properties
 

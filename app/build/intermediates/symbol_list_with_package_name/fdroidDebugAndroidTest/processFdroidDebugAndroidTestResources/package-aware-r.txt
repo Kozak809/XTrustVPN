@@ -1,3 +1,0 @@
-com.v2ray.ang.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
