@@ -9,8 +9,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.google.gson.Gson
+import com.v2ray.ang.AppConfig
 import com.v2ray.ang.R
 import com.v2ray.ang.databinding.FragmentHomeBinding
+import com.v2ray.ang.handler.MmkvManager
+import com.v2ray.ang.dto.StandardLocation
 import com.v2ray.ang.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,30 +27,91 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val gson = Gson()
 
+    private var mapReady: Boolean = false
+    private var pendingMapUpdate: Triple<Double, Double, String?>? = null
+
+    private var countryLookupStarted: Boolean = false
+
+    private data class IpApiResponse(
+        val country_code: String?
+    )
+
+    private val standardLocations = listOf(
+        StandardLocation(code = "RU", name = "Russia", flag = "🇷🇺", pingText = "25 ms"),
+        StandardLocation(code = "US", name = "United States", flag = "🇺🇸", pingText = "120 ms"),
+        StandardLocation(code = "NL", name = "Netherlands", flag = "🇳🇱", pingText = "55 ms"),
+        StandardLocation(code = "DE", name = "Germany", flag = "🇩🇪", pingText = "45 ms"),
+        StandardLocation(code = "GB", name = "United Kingdom", flag = "🇬🇧", pingText = "85 ms"),
+        StandardLocation(code = "CH", name = "Switzerland", flag = "🇨🇭", pingText = "60 ms"),
+        StandardLocation(code = "SG", name = "Singapore", flag = "🇸🇬", pingText = "180 ms"),
+        StandardLocation(code = "JP", name = "Japan", flag = "🇯🇵", pingText = "200 ms"),
+        StandardLocation(code = "FR", name = "France", flag = "🇫🇷", pingText = "60 ms"),
+        StandardLocation(code = "CA", name = "Canada", flag = "🇨🇦", pingText = "110 ms"),
+        StandardLocation(code = "TR", name = "Turkey", flag = "🇹🇷", pingText = "95 ms"),
+        StandardLocation(code = "AR", name = "Argentina", flag = "🇦🇷", pingText = "250 ms"),
+        StandardLocation(code = "SE", name = "Sweden", flag = "🇸🇪", pingText = "70 ms"),
+        StandardLocation(code = "IS", name = "Iceland", flag = "🇮🇸", pingText = "80 ms"),
+        StandardLocation(code = "AU", name = "Australia", flag = "🇦🇺", pingText = "220 ms"),
+        StandardLocation(code = "ES", name = "Spain", flag = "🇪🇸", pingText = "65 ms"),
+        StandardLocation(code = "IT", name = "Italy", flag = "🇮🇹", pingText = "75 ms"),
+        StandardLocation(code = "BR", name = "Brazil", flag = "🇧🇷", pingText = "180 ms"),
+        StandardLocation(code = "KR", name = "South Korea", flag = "🇰🇷", pingText = "150 ms"),
+        StandardLocation(code = "RO", name = "Romania", flag = "🇷🇴", pingText = "40 ms"),
+        StandardLocation(code = "HK", name = "Hong Kong", flag = "🇭🇰", pingText = "170 ms"),
+        StandardLocation(code = "PL", name = "Poland", flag = "🇵🇱", pingText = "50 ms")
+    )
+
+    private val codeToLatLon = mapOf(
+        "RU" to (55.7558 to 37.6173),
+        "US" to (40.7128 to -74.0060),
+        "NL" to (52.3676 to 4.9041),
+        "DE" to (52.5200 to 13.4050),
+        "GB" to (51.5074 to -0.1278),
+        "CH" to (47.3769 to 8.5417),
+        "SG" to (1.3521 to 103.8198),
+        "JP" to (35.6762 to 139.6503),
+        "FR" to (48.8566 to 2.3522),
+        "CA" to (43.6532 to -79.3832),
+        "TR" to (41.0082 to 28.9784),
+        "AR" to (-34.6037 to -58.3816),
+        "SE" to (59.3293 to 18.0686),
+        "IS" to (64.1466 to -21.9426),
+        "AU" to (-33.8688 to 151.2093),
+        "ES" to (40.4168 to -3.7038),
+        "IT" to (41.9028 to 12.4964),
+        "BR" to (-23.5505 to -46.6333),
+        "KR" to (37.5665 to 126.9780),
+        "RO" to (44.4268 to 26.1025),
+        "HK" to (22.3193 to 114.1694),
+        "PL" to (52.2297 to 21.0122)
+    )
+
     override fun onViewCreated(view: android.view.View, savedInstanceState: android.os.Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
 
         setupWebView(binding!!.mapWebview)
 
+        // Show selected location immediately (no external geo lookup)
+        updateLocationFromSelectedCode()
+
         binding!!.btnConnect.setOnClickListener {
+            binding?.btnConnect?.animate()?.cancel()
+            binding?.btnConnect?.animate()?.scaleX(0.92f)?.scaleY(0.92f)?.setDuration(90)
+                ?.withEndAction {
+                    binding?.btnConnect?.animate()?.scaleX(1f)?.scaleY(1f)?.setDuration(140)?.start()
+                }?.start()
             (requireActivity() as MainActivity).toggleVpnFromUi()
         }
 
         val vm: MainViewModel = (requireActivity() as MainActivity).mainViewModel
 
-        vm.updateTestResultAction.observe(viewLifecycleOwner) {
-            binding?.tvTestState?.text = it
-        }
-
         vm.isRunning.observe(viewLifecycleOwner) { isRunning ->
             val running = isRunning == true
             if (running) {
-                binding?.btnConnect?.setImageResource(R.drawable.ic_stop_24dp)
                 binding?.btnConnect?.isSelected = true
                 updateStatusUI(true)
             } else {
-                binding?.btnConnect?.setImageResource(R.drawable.ic_play_24dp)
                 binding?.btnConnect?.isSelected = false
                 updateStatusUI(false)
             }
@@ -55,16 +119,62 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         vm.connectionSuccessEvent.observe(viewLifecycleOwner) { info ->
             if (info != null) {
-                binding?.tvLocation?.text = info.serverName
-                fetchGeoAndUpdateMap(info.serverAddress, info.serverName)
+                // Once connected, keep showing selected location (not server host geo)
+                updateLocationFromSelectedCode()
             }
         }
+    }
+
+    private fun updateLocationFromSelectedCode() {
+        val b = binding ?: return
+        val manualLoc = MmkvManager.decodeSettingsBool(AppConfig.PREF_SELECTED_LOCATION_MANUAL, false)
+        val code = MmkvManager.decodeSettingsString(AppConfig.PREF_SELECTED_LOCATION, "")?.uppercase().orEmpty()
+        if (!manualLoc && !countryLookupStarted) {
+            countryLookupStarted = true
+            fetchCountryCodeByIp()
+        }
+        if (code.isBlank()) {
+            if (!countryLookupStarted) {
+                countryLookupStarted = true
+                fetchCountryCodeByIp()
+            }
+            b.tvLocation.text = getString(R.string.location_unknown)
+            return
+        }
+        val loc = standardLocations.firstOrNull { it.code == code }
+        if (loc == null) {
+            b.tvLocation.text = getString(R.string.location_unknown)
+            return
+        }
+        b.tvLocation.text = loc.name
+
+        val coords = codeToLatLon[code]
+        if (coords != null) {
+            val (lat, lon) = coords
+            pendingMapUpdate = Triple(lat, lon, loc.name)
+            applyPendingMapUpdateIfReady()
+        }
+    }
+
+    private fun applyPendingMapUpdateIfReady() {
+        if (!mapReady) return
+        val b = binding ?: return
+        val (lat, lon, label) = pendingMapUpdate ?: return
+        b.mapWebview.evaluateJavascript(
+            "window.setServerLocation(${lat}, ${lon}, ${gson.toJson(label)});",
+            null
+        )
     }
 
     override fun onDestroyView() {
         binding?.mapWebview?.destroy()
         binding = null
         super.onDestroyView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateLocationFromSelectedCode()
     }
 
     private fun updateStatusUI(isConnected: Boolean) {
@@ -81,7 +191,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun setupWebView(webView: WebView) {
-        webView.webViewClient = WebViewClient()
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                mapReady = true
+                applyPendingMapUpdateIfReady()
+            }
+        }
         webView.webChromeClient = WebChromeClient()
 
         webView.setOnTouchListener { _, _ -> true }
@@ -95,17 +211,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         webView.loadUrl("file:///android_asset/vpn_map.html")
     }
 
-    private data class GeoResponse(
-        val latitude: Double?,
-        val longitude: Double?,
-        val city: String?,
-        val country_name: String?
-    )
-
-    private fun fetchGeoAndUpdateMap(host: String, serverName: String) {
+    private fun fetchCountryCodeByIp() {
         lifecycleScope.launch(Dispatchers.IO) {
-            val url = URL("https://ipapi.co/${host}/json/")
-            val result = try {
+            val response = try {
+                val url = URL("https://ipapi.co/json/")
                 val conn = (url.openConnection() as HttpURLConnection).apply {
                     connectTimeout = 8000
                     readTimeout = 8000
@@ -117,31 +226,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 null
             }
 
-            if (result.isNullOrBlank()) {
-                return@launch
-            }
-
-            val geo = try {
-                gson.fromJson(result, GeoResponse::class.java)
+            val countryCode = try {
+                val parsed = gson.fromJson(response, IpApiResponse::class.java)
+                parsed?.country_code?.uppercase().orEmpty()
             } catch (_: Exception) {
-                null
+                ""
             }
 
-            val lat = geo?.latitude
-            val lon = geo?.longitude
-            if (lat == null || lon == null) {
-                return@launch
-            }
+            if (countryCode.isBlank()) return@launch
 
-            val label = listOfNotNull(geo.city, geo.country_name).joinToString(", ").ifBlank { serverName }
-
+            MmkvManager.encodeSettings(AppConfig.PREF_SELECTED_LOCATION, countryCode)
             withContext(Dispatchers.Main) {
-                binding?.tvLocation?.text = label
-                binding?.mapWebview?.evaluateJavascript(
-                    "window.setServerLocation(${lat}, ${lon}, ${gson.toJson(label)});",
-                    null
-                )
+                updateLocationFromSelectedCode()
             }
         }
     }
+
 }

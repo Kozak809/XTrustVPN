@@ -31,26 +31,46 @@
     }).addTo(map);
 
     let serverMarker = null;
+    let serverAccuracyCircle = null;
 
     // Ensure the map is non-interactive even on top of Leaflet options
     map.getContainer().style.pointerEvents = 'none';
 
-    function setServerLocation(lat, lon, label) {
+    function setServerLocation(lat, lon, label, accuracyMeters) {
       const ll = [lat, lon];
+
+      // точная точка
       if (serverMarker) {
         serverMarker.setLatLng(ll);
       } else {
         serverMarker = L.circleMarker(ll, {
-          radius: 10,
+          radius: 6,
           color: '#51cf66',
           weight: 3,
           fillColor: '#51cf66',
-          fillOpacity: 0.25
+          fillOpacity: 1
         }).addTo(map);
       }
+
+      // радиус (accuracy). если не передан — показываем небольшой круг, чтобы было как в примере
+      const radius = (typeof accuracyMeters === 'number' && accuracyMeters > 0) ? accuracyMeters : 250000;
+      if (serverAccuracyCircle) {
+        serverAccuracyCircle.setLatLng(ll);
+        serverAccuracyCircle.setRadius(radius);
+      } else {
+        serverAccuracyCircle = L.circle(ll, {
+          radius: radius,
+          color: '#51cf66',
+          weight: 1,
+          fillColor: '#51cf66',
+          fillOpacity: 0.12
+        }).addTo(map);
+      }
+
       if (label) {
         serverMarker.bindTooltip(label, { permanent: false, direction: 'top' }).openTooltip();
       }
+
       map.setView(ll, 3, { animate: true });
     }
 

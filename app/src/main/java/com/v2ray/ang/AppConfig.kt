@@ -50,6 +50,8 @@ object AppConfig {
     const val PREF_LANGUAGE = "pref_language"
     const val PREF_UI_MODE_NIGHT = "pref_ui_mode_night"
     const val PREF_CONNECTION_LOGS = "pref_connection_logs"
+    const val PREF_SELECTED_LOCATION = "pref_selected_location"
+    const val PREF_SELECTED_LOCATION_MANUAL = "pref_selected_location_manual"
     const val PREF_LOGLEVEL = "pref_core_loglevel"
     const val PREF_PROXY_SHARING = "pref_proxy_sharing_enabled"
     const val PREF_ALLOW_INSECURE = "pref_allow_insecure"

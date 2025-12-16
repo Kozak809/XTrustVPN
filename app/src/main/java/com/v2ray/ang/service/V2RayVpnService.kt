@@ -4,17 +4,12 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.ConnectivityManager
-import android.net.Network
-import android.net.NetworkCapabilities
-import android.net.NetworkRequest
 import android.net.ProxyInfo
 import android.net.VpnService
 import android.os.Build
 import android.os.ParcelFileDescriptor
 import android.os.StrictMode
 import android.util.Log
-import androidx.annotation.RequiresApi
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.AppConfig.LOOPBACK
 import com.v2ray.ang.BuildConfig
@@ -30,43 +25,6 @@ class V2RayVpnService : VpnService(), ServiceControl {
     private lateinit var mInterface: ParcelFileDescriptor
     private var isRunning = false
     private var tun2SocksService: Tun2SocksControl? = null
-
-    /**destroy
-     * Unfortunately registerDefaultNetworkCallback is going to return our VPN interface: https://android.googlesource.com/platform/frameworks/base/+/dda156ab0c5d66ad82bdcf76cda07cbc0a9c8a2e
-     *
-     * This makes doing a requestNetwork with REQUEST necessary so that we don't get ALL possible networks that
-     * satisfies default network capabilities but only THE default network. Unfortunately we need to have
-     * android.permission.CHANGE_NETWORK_STATE to be able to call requestNetwork.
-     *
-     * Source: https://android.googlesource.com/platform/frameworks/base/+/2df4c7d/services/core/java/com/android/server/ConnectivityService.java#887
-     */
-    @delegate:RequiresApi(Build.VERSION_CODES.P)
-    private val defaultNetworkRequest by lazy {
-        NetworkRequest.Builder()
-            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-            .addCapability(NetworkCapabilities.NET_CAPABILITY_NOT_RESTRICTED)
-            .build()
-    }
-
-    private val connectivity by lazy { getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager }
-
-    @delegate:RequiresApi(Build.VERSION_CODES.P)
-    private val defaultNetworkCallback by lazy {
-        object : ConnectivityManager.NetworkCallback() {
-            override fun onAvailable(network: Network) {
-                setUnderlyingNetworks(arrayOf(network))
-            }
-
-            override fun onCapabilitiesChanged(network: Network, networkCapabilities: NetworkCapabilities) {
-                // it's a good idea to refresh capabilities
-                setUnderlyingNetworks(arrayOf(network))
-            }
-
-            override fun onLost(network: Network) {
-                setUnderlyingNetworks(null)
-            }
-        }
-    }
 
     override fun onCreate() {
         super.onCreate()
@@ -113,7 +71,6 @@ class V2RayVpnService : VpnService(), ServiceControl {
         return protect(socket)
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun attachBaseContext(newBase: Context?) {
         val context = newBase?.let {
             MyContextWrapper.wrap(newBase, SettingsManager.getLocale())
@@ -227,15 +184,6 @@ class V2RayVpnService : VpnService(), ServiceControl {
      * @param builder The VPN Builder to configure
      */
     private fun configurePlatformFeatures(builder: Builder) {
-        // Android P (API 28) and above: Configure network callbacks
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            try {
-                connectivity.requestNetwork(defaultNetworkRequest, defaultNetworkCallback)
-            } catch (e: Exception) {
-                Log.e(AppConfig.TAG, "Failed to request default network", e)
-            }
-        }
-
         // Android Q (API 29) and above: Configure metering and HTTP proxy
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             builder.setMetered(false)
@@ -324,13 +272,6 @@ class V2RayVpnService : VpnService(), ServiceControl {
 //        val info = loadVpnNetworkInfo(configName, emptyInfo)!! + (lastNetworkInfo ?: emptyInfo)
 //        saveVpnNetworkInfo(configName, info)
         isRunning = false
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            try {
-                connectivity.unregisterNetworkCallback(defaultNetworkCallback)
-            } catch (ignored: Exception) {
-                // ignored
-            }
-        }
 
         tun2SocksService?.stopTun2Socks()
         tun2SocksService = null

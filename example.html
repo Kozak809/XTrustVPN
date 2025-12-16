@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPN App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        :root { --bg-dark: #0f0f1e; --primary: #4c6ef5; --success: #51cf66; --danger: #fa5252; --text-gray: #8b8b8b; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+        body { font-family: -apple-system, system-ui, sans-serif; background: linear-gradient(135deg, var(--bg-dark), #1a1a2e); min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; color: white; }
+        
+        .app-container {
+            background: #16162a; border-radius: 35px; width: 100%; max-width: 400px; height: 750px;
+            display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Карта */
+        .map-container {
+            background: linear-gradient(180deg, #2b4c7e 0%, #1e3a5f 100%); height: 280px; flex-shrink: 0;
+            position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            clip-path: ellipse(100% 100% at 50% 0%);
+        }
+        .map-bg { position: absolute; inset: 0; opacity: 0.8; background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 30px 30px; }
+        
+        #miniMap {
+            width: 100%; 
+            height: 100%; 
+            border-radius: 0 0 35px 35px;
+            z-index: 1;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        .loc-text {
+            font-size: 20px;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Анимированная метка VPN */
+        .vpn-marker {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--success) 0%, rgba(81,207,102,0.3) 70%, transparent 100%);
+            border: 2px solid var(--success);
+            box-shadow: 0 0 20px rgba(81,207,102,0.6);
+            animation: vpnPulse 2s infinite ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1001;
+            transform: translate(-50%, -50%);
+        }
+
+        .vpn-marker.active {
+            opacity: 1;
+        }
+
+        @keyframes vpnPulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                box-shadow: 0 0 20px rgba(81,207,102,0.6);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                box-shadow: 0 0 40px rgba(81,207,102,0.8);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                box-shadow: 0 0 20px rgba(81,207,102,0.6);
+            }
+        }
+
+        /* Дополнительная анимация для эффекта подключения */
+        .vpn-marker.connecting {
+            animation: vpnConnecting 0.5s ease-out;
+        }
+
+        @keyframes vpnConnecting {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Контент */
+        .content { flex: 1; overflow: hidden; display: flex; flex-direction: column; padding: 25px; }
+        .tab { display: none; height: 100%; flex-direction: column; }
+        .tab.active { display: flex; }
+
+        /* Главная */
+        .status-box { text-align: center; margin: auto 0; }
+        .btn-connect {
+            width: 180px; height: 180px; border-radius: 50%; border: none; background: linear-gradient(135deg, var(--primary), #364fc7);
+            color: white; font-size: 18px; font-weight: 600; cursor: pointer; box-shadow: 0 15px 40px rgba(76,110,245,0.3);
+            transition: 0.3s; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center;
+        }
+        .btn-connect:active { transform: scale(0.95); }
+        .btn-connect.connected { background: linear-gradient(135deg, var(--success), #37b24d); box-shadow: 0 15px 40px rgba(81,207,102,0.3); }
+        
+        .status-pill {
+            display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.06);
+            padding: 12px 25px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); font-size: 15px; font-weight: 500;
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--danger); box-shadow: 0 0 8px var(--danger); transition: 0.3s; }
+        .dot.connected { background: var(--success); box-shadow: 0 0 8px var(--success); }
+
+        /* Список */
+        .search-box { position: relative; margin-bottom: 20px; }
+        .search-inp { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px 15px 12px 40px; border-radius: 12px; color: white; }
+        .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 18px; stroke: var(--text-gray); }
+        
+        .list-wrap { flex: 1; overflow: hidden; display: flex; flex-direction: column; mask-image: linear-gradient(to bottom, black 85%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%); }
+        .list { overflow-y: auto; padding-bottom: 20px; -ms-overflow-style: none; scrollbar-width: none; }
+        .list::-webkit-scrollbar { display: none; }
+        
+        .item { display: flex; align-items: center; gap: 15px; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 15px; margin-bottom: 8px; cursor: pointer; border: 1px solid transparent; transition: 0.2s; }
+        .item:hover { background: rgba(255,255,255,0.06); }
+        .item.selected { background: rgba(81,207,102,0.15); border-color: var(--success); }
+        .item.hidden { display: none; }
+        .flag { font-size: 28px; line-height: 1; }
+        .ping { font-size: 13px; color: var(--text-gray); }
+        .ping.fast { color: var(--success); }
+
+        /* Настройки */
+        .set-item { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 10px; }
+        .switch { width: 46px; height: 26px; background: rgba(255,255,255,0.1); border-radius: 13px; position: relative; cursor: pointer; transition: 0.3s; }
+        .switch.active { background: var(--primary); }
+        .switch::after { content:''; position: absolute; top:3px; left:3px; width:20px; height:20px; background:white; border-radius:50%; transition:0.3s; }
+        .switch.active::after { left: 23px; }
+        .btn-buy { background: var(--primary); color: white; border: none; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+
+        /* Навигация */
+        .nav { display: flex; padding: 15px 0; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); }
+        .nav-btn { flex: 1; background: none; border: none; color: #6b7280; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; transition: 0.3s; }
+        .nav-btn.active { color: var(--primary); }
+        .nav-btn svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; }
+        .nav-btn span { font-size: 11px; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="map-container">
+            <div id="miniMap"></div>
+            <div class="vpn-marker" id="vpnMarker"></div>
+            <div class="map-overlay">
+                <div class="loc-text" id="locText">Определение местоположения...</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="tab active" id="tab-home">
+                <div class="status-box">
+                    <button class="btn-connect" id="btnConn" onclick="toggleConn()">
+                        <img src="img/but.svg" alt="" style="width: 200px; height: 200px;" id="btnIcon">
+                    </button>
+                    <div class="status-pill">
+                        <div class="dot" id="statusDot"></div>
+                        <span id="statusText">Отключено</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab" id="tab-loc">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" class="search-inp" id="search" placeholder="Поиск..." onkeyup="filterLoc()">
+                </div>
+                <div class="list-wrap">
+                    <div class="list" id="list">
+                        <div class="item selected" onclick="sel(this)" data-n="Russia"><span class="flag">🇷🇺</span><div><div class="name">Russia</div><div class="ping fast">25 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="United States"><span class="flag">🇺🇸</span><div><div class="name">United States</div><div class="ping">120 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Netherlands"><span class="flag">🇳🇱</span><div><div class="name">Netherlands</div><div class="ping fast">55 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Germany"><span class="flag">🇩🇪</span><div><div class="name">Germany</div><div class="ping fast">45 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="United Kingdom"><span class="flag">🇬🇧</span><div><div class="name">United Kingdom</div><div class="ping">85 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Switzerland"><span class="flag">🇨🇭</span><div><div class="name">Switzerland</div><div class="ping fast">60 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Singapore"><span class="flag">🇸🇬</span><div><div class="name">Singapore</div><div class="ping">180 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Japan"><span class="flag">🇯🇵</span><div><div class="name">Japan</div><div class="ping">200 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="France"><span class="flag">🇫🇷</span><div><div class="name">France</div><div class="ping fast">60 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Canada"><span class="flag">🇨🇦</span><div><div class="name">Canada</div><div class="ping">110 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Turkey"><span class="flag">🇹🇷</span><div><div class="name">Turkey</div><div class="ping">95 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Argentina"><span class="flag">��</span><div><div class="name">Argentina</div><div class="ping">250 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Sweden"><span class="flag">🇸🇪</span><div><div class="name">Sweden</div><div class="ping fast">70 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Iceland"><span class="flag">🇮🇸</span><div><div class="name">Iceland</div><div class="ping fast">80 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Australia"><span class="flag">🇦🇺</span><div><div class="name">Australia</div><div class="ping">220 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Spain"><span class="flag">🇪🇸</span><div><div class="name">Spain</div><div class="ping fast">65 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Italy"><span class="flag">🇮🇹</span><div><div class="name">Italy</div><div class="ping fast">75 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Brazil"><span class="flag">🇧🇷</span><div><div class="name">Brazil</div><div class="ping">180 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="South Korea"><span class="flag">🇰🇷</span><div><div class="name">South Korea</div><div class="ping">150 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Romania"><span class="flag">🇷🇴</span><div><div class="name">Romania</div><div class="ping fast">40 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Hong Kong"><span class="flag">🇭🇰</span><div><div class="name">Hong Kong</div><div class="ping">170 ms</div></div></div>
+                        <div class="item" onclick="sel(this)" data-n="Poland"><span class="flag">🇵🇱</span><div><div class="name">Poland</div><div class="ping fast">50 ms</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab" id="tab-set">
+                <div style="color:var(--text-gray); font-size:13px; margin-bottom:10px; font-weight:600">ПОДКЛЮЧЕНИЕ</div>
+                <div class="set-item"><span>Автоподключение</span><div class="switch" onclick="this.classList.toggle('active')"></div></div>
+                <div class="set-item"><span>Kill Switch</span><div class="switch" onclick="this.classList.toggle('active')"></div></div>
+                <div style="color:var(--text-gray); font-size:13px; margin:20px 0 10px; font-weight:600">ОПЦИИ</div>
+                <div class="set-item"><span>Без рекламы ($2)</span><button class="btn-buy">Купить</button></div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <button class="nav-btn active" onclick="nav('home', this)"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Главная</span></button>
+            <button class="nav-btn" onclick="nav('loc', this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg><span>Локации</span></button>
+            <button class="nav-btn" onclick="nav('set', this)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 8.4 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 8.6a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a2 2 0 0 1 2-2v-.09A1.65 1.65 0 0 0 12 3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09A1.65 1.65 0 0 0 15.6 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Настройки</span></button>
+        </div>
+    </div>
+
+    <script>
+        let isConn = false, timer, sec = 0, map, currentMarker;
+        const els = {
+            btn: document.getElementById('btnConn'),
+            btnIcon: document.getElementById('btnIcon'),
+            dot: document.getElementById('statusDot'),
+            txt: document.getElementById('statusText'),
+            loc: document.getElementById('locText'),
+            list: document.getElementById('list'),
+            vpnMarker: document.getElementById('vpnMarker')
+        };
+
+        // Координаты стран
+        const coords = {
+            'Russia': [61.5, 105.3], 'United States': [39.8, -98.6], 'Netherlands': [52.1, 5.3],
+            'Germany': [51.2, 10.4], 'United Kingdom': [55.4, -3.4], 'Switzerland': [46.8, 8.2],
+            'Singapore': [1.3, 103.8], 'Japan': [36.2, 138.3], 'France': [46.2, 2.2],
+            'Canada': [56.1, -106.3], 'Turkey': [38.9, 35.2], 'Argentina': [-38.4, -63.6],
+            'Sweden': [60.1, 18.6], 'Iceland': [64.9, -19.0], 'Australia': [-25.2, 133.7],
+            'Spain': [40.4, -3.7], 'Italy': [41.8, 12.5], 'Brazil': [-14.2, -51.9],
+            'South Korea': [35.9, 127.7], 'Romania': [45.9, 24.9], 'Hong Kong': [22.3, 114.1],
+            'Poland': [51.9, 19.1]
+        };
+
+        // Инициализация карты
+        function initMap() {
+            map = L.map('miniMap', {
+                zoomControl: false, attributionControl: false, dragging: false,
+                touchZoom: false, doubleClickZoom: false, scrollWheelZoom: false,
+                boxZoom: false, keyboard: false, tap: false
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png').addTo(map);
+
+            // Геолокация
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    pos => {
+                        currentMarker = L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map);
+                        map.setView([pos.coords.latitude, pos.coords.longitude], 3);
+                        getCountryName(pos.coords.latitude, pos.coords.longitude);
+                        updateVpnMarkerPosition();
+                    },
+                    () => showDefaultLocation()
+                );
+            } else {
+                showDefaultLocation();
+            }
+
+            // Обновляем позицию метки при изменении вида карты
+            map.on('move', updateVpnMarkerPosition);
+            map.on('zoom', updateVpnMarkerPosition);
+        }
+
+        // Определение страны
+        async function getCountryName(lat, lng) {
+            try {
+                const data = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=10`).then(r => r.json());
+                const country = data.address.country || 'Неизвестно';
+                const city = data.address.city || data.address.town || data.address.village || '';
+                els.loc.textContent = city ? `${city}, ${country}` : country;
+            } catch {
+                els.loc.textContent = 'Местоположение определено';
+            }
+        }
+
+        // Локация по умолчанию
+        function showDefaultLocation() {
+            currentMarker = L.marker([47.0, 28.8]).addTo(map);
+            map.setView([47.0, 28.8], 3);
+            els.loc.textContent = 'Chisinau, Moldova';
+            updateVpnMarkerPosition();
+        }
+
+        // Обновление карты
+        function updateMapLocation(countryName) {
+            if (coords[countryName] && map) {
+                if (currentMarker) map.removeLayer(currentMarker);
+                currentMarker = L.marker(coords[countryName]).addTo(map);
+                map.setView(coords[countryName], 3);
+
+                // Обновляем позицию VPN метки
+                updateVpnMarkerPosition();
+            }
+        }
+
+        // Обновление позиции VPN метки
+        function updateVpnMarkerPosition() {
+            if (currentMarker && map) {
+                const markerPos = map.latLngToContainerPoint(currentMarker.getLatLng());
+                els.vpnMarker.style.left = markerPos.x + 'px';
+                els.vpnMarker.style.top = markerPos.y + 'px';
+            }
+        }
+
+        // Таймер подключения
+        function startT() {
+            sec = 0; clearInterval(timer);
+            els.txt.textContent = `Подключено • 00:00:00`;
+
+            // Показываем анимированную метку после подключения
+            setTimeout(() => {
+                els.vpnMarker.classList.add('active', 'connecting');
+                setTimeout(() => {
+                    els.vpnMarker.classList.remove('connecting');
+                }, 500);
+            }, 100);
+
+            timer = setInterval(() => {
+                sec++;
+                const f = t => t.toString().padStart(2,'0');
+                const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+                els.txt.textContent = `Подключено • ${f(h)}:${f(m)}:${f(s)}`;
+            }, 1000);
+        }
+
+        // Переключение соединения
+        function toggleConn() {
+            isConn = !isConn;
+            els.btn.classList.toggle('connected', isConn);
+            els.dot.classList.toggle('connected', isConn);
+            if (isConn) {
+                startT();
+            } else {
+                clearInterval(timer);
+                els.txt.textContent = 'Отключено';
+                // Скрываем метку при отключении
+                els.vpnMarker.classList.remove('active', 'connecting');
+            }
+        }
+
+        // Навигация
+        function nav(t, el) {
+            document.querySelectorAll('.tab, .nav-btn').forEach(e => e.classList.remove('active'));
+            document.getElementById(`tab-${t}`).classList.add('active');
+            el.classList.add('active');
+        }
+
+        // Поиск локаций
+        function filterLoc() {
+            const val = document.getElementById('search').value.toLowerCase();
+            [...els.list.children].forEach(el => 
+                el.classList.toggle('hidden', !el.querySelector('.name').innerText.toLowerCase().includes(val))
+            );
+        }
+
+        // Выбор локации
+        function sel(el) {
+            els.list.prepend(el);
+            document.querySelectorAll('.item').forEach(i => i.classList.remove('selected'));
+            el.classList.add('selected');
+            
+            const countryName = el.getAttribute('data-n');
+            els.loc.textContent = countryName;
+            updateMapLocation(countryName);
+            
+            document.getElementById('search').value = '';
+            filterLoc();
+            
+            if(!isConn) toggleConn();
+            else startT();
+            
+            nav('home', document.querySelector('.nav-btn'));
+        }
+
+        // Запуск
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+</body>
+</html>
