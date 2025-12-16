@@ -16,6 +16,7 @@ import com.v2ray.ang.AppConfig
 import com.v2ray.ang.R
 import com.v2ray.ang.dto.ProfileItem
 import com.v2ray.ang.dto.ServersCache
+import com.v2ray.ang.dto.ConnectionLogEntry
 import com.v2ray.ang.extension.serializable
 import com.v2ray.ang.extension.toastError
 import com.v2ray.ang.extension.toastSuccess
@@ -42,6 +43,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val isRunning by lazy { MutableLiveData<Boolean>() }
     val updateListAction by lazy { MutableLiveData<Int>() }
     val updateTestResultAction by lazy { MutableLiveData<String>() }
+
+    data class ConnectionSuccessInfo(
+        val serverName: String,
+        val serverAddress: String
+    )
+
+    val connectionSuccessEvent by lazy { MutableLiveData<ConnectionSuccessInfo?>() }
     private val tcpingTestScope by lazy { CoroutineScope(Dispatchers.IO) }
 
     /**
@@ -444,6 +452,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 AppConfig.MSG_STATE_START_SUCCESS -> {
                     getApplication<AngApplication>().toastSuccess(R.string.toast_services_success)
                     isRunning.value = true
+
+                    val guid = MmkvManager.getSelectServer().orEmpty()
+                    val config = MmkvManager.decodeServerConfig(guid)
+                    val serverName = config?.remarks.orEmpty().ifBlank { guid }
+                    val serverAddress = config?.server.orEmpty()
+
+                    if (serverAddress.isNotBlank()) {
+                        MmkvManager.addConnectionLog(
+                            ConnectionLogEntry(
+                                timestampMillis = System.currentTimeMillis(),
+                                serverName = serverName,
+                                serverAddress = serverAddress
+                            )
+                        )
+                        connectionSuccessEvent.value = ConnectionSuccessInfo(serverName, serverAddress)
+                    }
                 }
 
                 AppConfig.MSG_STATE_START_FAILURE -> {

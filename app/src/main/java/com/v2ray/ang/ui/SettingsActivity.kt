@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.preference.CheckBoxPreference
 import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequest
@@ -73,6 +74,11 @@ class SettingsActivity : BaseActivity() {
 
         override fun onCreatePreferences(bundle: Bundle?, s: String?) {
             addPreferencesFromResource(R.xml.pref_settings)
+
+            findPreference<Preference>(AppConfig.PREF_CONNECTION_LOGS)?.setOnPreferenceClickListener {
+                startActivity(Intent(activity, ConnectionLogsActivity::class.java))
+                true
+            }
 
 //            perAppProxy?.setOnPreferenceClickListener {
 //                startActivity(Intent(activity, PerAppProxyActivity::class.java))
