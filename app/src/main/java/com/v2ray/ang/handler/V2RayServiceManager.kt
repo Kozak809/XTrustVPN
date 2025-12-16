@@ -245,7 +245,7 @@ object V2RayServiceManager {
                 try {
                     time = coreController.measureDelay(SettingsManager.getDelayTestUrl(true))
                 } catch (e: Exception) {
-                    Log.e(AppConfig.TAG, "Failed to measure delay with alternative URL", e)
+                    Log.e(AppConfig.TAG, "Failed to measure delay with primary URL", e)
                     errorStr = e.message?.substringAfter("\":") ?: "empty message"
                 }
             }
@@ -256,6 +256,7 @@ object V2RayServiceManager {
                 service.getString(R.string.connection_test_error, errorStr)
             }
             MessageUtil.sendMsg2UI(service, AppConfig.MSG_MEASURE_DELAY_SUCCESS, result)
+            MessageUtil.sendMsg2UI(service, AppConfig.MSG_MEASURE_DELAY_RESULT, time)
 
             // Only fetch IP info if the delay test was successful
             if (time >= 0) {
