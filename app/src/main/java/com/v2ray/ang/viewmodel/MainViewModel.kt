@@ -27,11 +27,13 @@ import com.v2ray.ang.handler.SpeedtestManager
 import com.v2ray.ang.util.MessageUtil
 import com.v2ray.ang.util.Utils
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.Collections
@@ -70,6 +72,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val connectionSuccessEvent by lazy { MutableLiveData<ConnectionSuccessInfo?>() }
     private val tcpingTestScope by lazy { CoroutineScope(Dispatchers.IO) }
+
+    private var pendingDelayCheck: CompletableDeferred<Long>? = null
 
     /**
      * Refer to the official documentation for [registerReceiver](https://developer.android.com/reference/androidx/core/content/ContextCompat#registerReceiver(android.content.Context,android.content.BroadcastReceiver,android.content.IntentFilter,int):
@@ -503,6 +507,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 AppConfig.MSG_STATE_NOT_RUNNING -> {
                     isRunning.value = false
                     connectionState.value = ConnectionState.DISCONNECTED
+                    pendingDelayCheck?.cancel()
+                    pendingDelayCheck = null
                 }
 
                 AppConfig.MSG_STATE_START_SUCCESS -> {
@@ -515,7 +521,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     val serverAddress = config?.server.orEmpty()
 
                     viewModelScope.launch(Dispatchers.IO) {
-                        val ok = checkInternetAfterConnect()
+                        val deferred = CompletableDeferred<Long>()
+                        pendingDelayCheck?.cancel()
+                        pendingDelayCheck = deferred
+                        MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_MEASURE_DELAY, "")
+
+                        val delayMs = withTimeoutOrNull(8000L) { deferred.await() } ?: -1L
+                        pendingDelayCheck = null
+
+                        val ok = delayMs >= 0
                         withContext(Dispatchers.Main) {
                             if (!ok) {
                                 getApplication<AngApplication>().toastError(R.string.toast_services_failure)
@@ -545,15 +559,24 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     getApplication<AngApplication>().toastError(R.string.toast_services_failure)
                     isRunning.value = false
                     connectionState.value = ConnectionState.DISCONNECTED
+                    pendingDelayCheck?.cancel()
+                    pendingDelayCheck = null
                 }
 
                 AppConfig.MSG_STATE_STOP_SUCCESS -> {
                     isRunning.value = false
                     connectionState.value = ConnectionState.DISCONNECTED
+                    pendingDelayCheck?.cancel()
+                    pendingDelayCheck = null
                 }
 
                 AppConfig.MSG_MEASURE_DELAY_SUCCESS -> {
                     updateTestResultAction.value = intent.getStringExtra("content")
+                }
+
+                AppConfig.MSG_MEASURE_DELAY_RESULT -> {
+                    val time = intent.serializable<Long>("content") ?: return
+                    pendingDelayCheck?.complete(time)
                 }
 
                 AppConfig.MSG_MEASURE_CONFIG_SUCCESS -> {
