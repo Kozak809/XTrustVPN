@@ -4,6 +4,7 @@ import com.tencent.mmkv.MMKV
 import com.v2ray.ang.AppConfig.PREF_IS_BOOTED
 import com.v2ray.ang.AppConfig.PREF_ROUTING_RULESET
 import com.v2ray.ang.dto.AssetUrlItem
+import com.v2ray.ang.dto.ConnectionLogEntry
 import com.v2ray.ang.dto.ProfileItem
 import com.v2ray.ang.dto.RulesetItem
 import com.v2ray.ang.dto.ServerAffiliationInfo
@@ -26,6 +27,7 @@ object MmkvManager {
     private const val KEY_SELECTED_SERVER = "SELECTED_SERVER"
     private const val KEY_ANG_CONFIGS = "ANG_CONFIGS"
     private const val KEY_SUB_IDS = "SUB_IDS"
+    private const val KEY_CONNECTION_LOGS = "CONNECTION_LOGS"
 
     //private val profileStorage by lazy { MMKV.mmkvWithID(ID_PROFILE_CONFIG, MMKV.MULTI_PROCESS_MODE) }
     private val mainStorage by lazy { MMKV.mmkvWithID(ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
@@ -65,6 +67,27 @@ object MmkvManager {
      */
     fun encodeServerList(serverList: MutableList<String>) {
         mainStorage.encode(KEY_ANG_CONFIGS, JsonUtil.toJson(serverList))
+    }
+
+    fun addConnectionLog(entry: ConnectionLogEntry) {
+        val logs = decodeConnectionLogs().toMutableList()
+        logs.add(0, entry)
+        if (logs.size > 100) {
+            logs.subList(100, logs.size).clear()
+        }
+        mainStorage.encode(KEY_CONNECTION_LOGS, JsonUtil.toJson(logs))
+    }
+
+    fun decodeConnectionLogs(): List<ConnectionLogEntry> {
+        val json = mainStorage.decodeString(KEY_CONNECTION_LOGS)
+        if (json.isNullOrBlank()) {
+            return emptyList()
+        }
+        return try {
+            JsonUtil.fromJson(json, Array<ConnectionLogEntry>::class.java).toList()
+        } catch (_: Exception) {
+            emptyList()
+        }
     }
 
     /**

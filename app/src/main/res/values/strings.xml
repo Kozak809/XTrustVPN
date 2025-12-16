@@ -20,6 +20,19 @@
     <string name="toast_services_success">Start Services Success</string>
     <string name="toast_services_failure">Start Services Failure</string>
 
+    <string name="nav_home">Главная</string>
+    <string name="nav_locations">Локации</string>
+    <string name="nav_settings">Настройки</string>
+
+    <string name="status_connected">Подключено</string>
+    <string name="status_disconnected">Отключено</string>
+    <string name="location_unknown">Определение местоположения...</string>
+
+    <string name="title_connection_logs">Логи подключений</string>
+    <string name="summary_connection_logs">Успешные подключения и выбранные серверы</string>
+    <string name="connection_log_title_format">Подключено к %1$s</string>
+    <string name="connection_log_subtitle_format">%1$s • %2$s</string>
+
     <!--ServerActivity-->
     <string name="title_server">Configuration</string>
     <string name="menu_item_add_config">Add configuration</string>

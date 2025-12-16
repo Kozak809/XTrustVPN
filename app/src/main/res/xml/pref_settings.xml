@@ -100,6 +100,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/title_ui_settings">
+        <Preference
+            android:key="pref_connection_logs"
+            android:summary="@string/summary_connection_logs"
+            android:title="@string/title_connection_logs" />
+
         <CheckBoxPreference
             android:key="pref_speed_enabled"
             android:summary="@string/summary_pref_speed_enabled"

@@ -88,6 +88,9 @@
             android:name=".ui.LogcatActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.ConnectionLogsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.RoutingSettingActivity"
             android:exported="false" />
         <activity

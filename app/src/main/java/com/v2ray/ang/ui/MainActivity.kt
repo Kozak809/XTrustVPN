@@ -7,26 +7,19 @@ import android.content.pm.PackageManager
 import android.net.VpnService
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.AppConfig.VPN
 import com.v2ray.ang.R
 import com.v2ray.ang.databinding.ActivityMainBinding
 import com.v2ray.ang.extension.toast
-import com.v2ray.ang.extension.toastError
 import com.v2ray.ang.handler.AngConfigManager
 import com.v2ray.ang.handler.MmkvManager
 import com.v2ray.ang.handler.V2RayServiceManager
-import com.v2ray.ang.util.Utils
 import com.v2ray.ang.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -34,6 +27,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : BaseActivity() {
+
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -45,6 +39,10 @@ class MainActivity : BaseActivity() {
     }
 
     val mainViewModel: MainViewModel by viewModels()
+
+    private val homeFragment by lazy { HomeFragment() }
+    private val locationsFragment by lazy { LocationsFragment() }
+    private val settingsFragment by lazy { SettingsActivity.SettingsFragment() }
 
     // register activity result for requesting permission
     private val requestPermissionLauncher =
@@ -73,25 +71,12 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.fab.setOnClickListener {
-            // Simple click without animation for now
-            
-            if (mainViewModel.isRunning.value == true) {
-                V2RayServiceManager.stopVService(this)
-            } else if ((MmkvManager.decodeSettingsString(AppConfig.PREF_MODE) ?: VPN) == VPN) {
-                val intent = VpnService.prepare(this)
-                if (intent == null) {
-                    startV2Ray()
-                } else {
-                    requestVpnPermission.launch(intent)
-                }
-            } else {
-                startV2Ray()
-            }
-        }
+        supportActionBar?.hide()
 
         setupViewModel()
         initializeDefaultProfile()
+
+        setupBottomNav(savedInstanceState)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
@@ -103,24 +88,36 @@ class MainActivity : BaseActivity() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun setupViewModel() {
-        mainViewModel.updateTestResultAction.observe(this) { setTestState(it) }
         mainViewModel.isRunning.observe(this) { isRunning ->
-            if (isRunning) {
-                binding.fab.setImageResource(R.drawable.ic_stop_24dp)
-                binding.fab.setBackgroundResource(R.drawable.btn_connect_selector)
-                binding.fab.isSelected = true
-                setTestState(getString(R.string.connection_connected))
-                updateStatusUI(true)
-            } else {
-                binding.fab.setImageResource(R.drawable.ic_play_24dp)
-                binding.fab.setBackgroundResource(R.drawable.btn_connect_selector)
-                binding.fab.isSelected = false
-                setTestState(getString(R.string.connection_test_fail))
-                updateStatusUI(false)
-            }
+            // UI state is handled inside fragments
         }
         mainViewModel.startListenBroadcast()
         mainViewModel.initAssets(assets)
+    }
+
+    private fun setupBottomNav(savedInstanceState: Bundle?) {
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, homeFragment)
+                .commit()
+        }
+
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            val fragment = when (item.itemId) {
+                R.id.nav_home -> homeFragment
+                R.id.nav_locations -> locationsFragment
+                R.id.nav_settings -> settingsFragment
+                else -> homeFragment
+            }
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+            true
+        }
+
+        if (binding.bottomNav.selectedItemId == 0) {
+            binding.bottomNav.selectedItemId = R.id.nav_home
+        }
     }
 
     private fun initializeDefaultProfile() {
@@ -133,8 +130,8 @@ class MainActivity : BaseActivity() {
                 // Look for our specific profile
                 for (guid in serverList) {
                     val config = MmkvManager.decodeServerConfig(guid)
-                    if (config != null && 
-                        config.server == "149.22.87.241" && 
+                    if (config != null &&
+                        config.server == "149.22.87.241" &&
                         config.serverPort == "443" &&
                         config.configType.toString() == "SHADOWSOCKS") {
                         targetGuid = guid
@@ -146,7 +143,7 @@ class MainActivity : BaseActivity() {
                 if (targetGuid == null) {
                     val defaultProfileUrl = "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@149.22.87.241:443#Default Server"
                     val result = AngConfigManager.importBatchConfig(defaultProfileUrl, "", false)
-                    
+
                     if (result.first > 0) {
                         val updatedServerList = MmkvManager.decodeServerList()
                         if (updatedServerList.isNotEmpty()) {
@@ -174,7 +171,7 @@ class MainActivity : BaseActivity() {
                 initializeDefaultProfile()
                 delay(1000) // Wait for profile to be created
             }
-            
+
             if (MmkvManager.getSelectServer().isNullOrEmpty()) {
                 toast("Failed to load server configuration")
                 return@launch
@@ -183,18 +180,31 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun setTestState(content: String?) {
-        binding.tvTestState.text = content
+    fun startVpnFromUi() {
+        if ((MmkvManager.decodeSettingsString(AppConfig.PREF_MODE) ?: VPN) == VPN) {
+            val intent = VpnService.prepare(this)
+            if (intent == null) {
+                startV2Ray()
+            } else {
+                requestVpnPermission.launch(intent)
+            }
+        } else {
+            startV2Ray()
+        }
     }
 
-    private fun updateStatusUI(isConnected: Boolean) {
-        if (isConnected) {
-            binding.statusDot.setBackgroundResource(R.drawable.status_dot)
-            binding.statusDot.setBackgroundColor(ContextCompat.getColor(this, R.color.success_green))
-            binding.statusText.text = "Подключено"
+    fun toggleVpnFromUi() {
+        if (mainViewModel.isRunning.value == true) {
+            V2RayServiceManager.stopVService(this)
+        } else if ((MmkvManager.decodeSettingsString(AppConfig.PREF_MODE) ?: VPN) == VPN) {
+            val intent = VpnService.prepare(this)
+            if (intent == null) {
+                startV2Ray()
+            } else {
+                requestVpnPermission.launch(intent)
+            }
         } else {
-            binding.statusDot.setBackgroundColor(ContextCompat.getColor(this, R.color.danger_red))
-            binding.statusText.text = "Отключено"
+            startV2Ray()
         }
     }
 }
