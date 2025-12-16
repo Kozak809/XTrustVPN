@@ -9,7 +9,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.v2ray.ang"
+        applicationId = "com.kozak.xtrustvpn"
         minSdk = 21
         targetSdk = 35
         versionCode = 683
@@ -19,6 +19,7 @@ android {
         val abiFilterList = (properties["ABI_FILTERS"] as? String)?.split(';')
         splits {
             abi {
+                // Build a single universal APK to avoid install failures from wrong ABI split APKs.
                 isEnable = true
                 reset()
                 if (abiFilterList != null && abiFilterList.isNotEmpty()) {
@@ -31,7 +32,7 @@ android {
                         "x86"
                     )
                 }
-                isUniversalApk = abiFilterList.isNullOrEmpty()
+                isUniversalApk = true
             }
         }
 
@@ -78,6 +79,7 @@ android {
     sourceSets {
         getByName("main") {
             jniLibs.srcDirs("libs")
+            assets.srcDirs("src/main/assets", "../AndroidLibXrayLite/assets")
         }
     }
 

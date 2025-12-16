@@ -26,6 +26,7 @@
 
     <string name="status_connected">Подключено</string>
     <string name="status_disconnected">Отключено</string>
+    <string name="status_connecting">Подключение</string>
     <string name="location_unknown">Определение местоположения...</string>
 
     <string name="title_connection_logs">Логи подключений</string>
