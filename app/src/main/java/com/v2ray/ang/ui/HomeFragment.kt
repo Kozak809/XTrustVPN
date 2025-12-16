@@ -106,14 +106,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val vm: MainViewModel = (requireActivity() as MainActivity).mainViewModel
 
-        vm.isRunning.observe(viewLifecycleOwner) { isRunning ->
-            val running = isRunning == true
-            if (running) {
-                binding?.btnConnect?.isSelected = true
-                updateStatusUI(true)
-            } else {
-                binding?.btnConnect?.isSelected = false
-                updateStatusUI(false)
+        vm.connectionState.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                MainViewModel.ConnectionState.CONNECTED -> {
+                    binding?.btnConnect?.isSelected = true
+                    updateStatusUIConnected()
+                }
+
+                MainViewModel.ConnectionState.CONNECTING -> {
+                    binding?.btnConnect?.isSelected = true
+                    updateStatusUIConnecting()
+                }
+
+                else -> {
+                    binding?.btnConnect?.isSelected = false
+                    updateStatusUIDisconnected()
+                }
             }
         }
 
@@ -177,16 +185,24 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         updateLocationFromSelectedCode()
     }
 
-    private fun updateStatusUI(isConnected: Boolean) {
+    private fun updateStatusUIConnected() {
         val b = binding ?: return
-        if (isConnected) {
-            b.statusDot.setBackgroundResource(R.drawable.status_dot)
-            b.statusDot.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.success_green))
-            b.statusText.text = getString(R.string.status_connected)
-        } else {
-            b.statusDot.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.danger_red))
-            b.statusText.text = getString(R.string.status_disconnected)
-        }
+        b.statusDot.setBackgroundResource(R.drawable.status_dot)
+        b.statusDot.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.success_green))
+        b.statusText.text = getString(R.string.status_connected)
+    }
+
+    private fun updateStatusUIConnecting() {
+        val b = binding ?: return
+        b.statusDot.setBackgroundResource(R.drawable.status_dot)
+        b.statusDot.setBackgroundColor(0xFFFFC107.toInt())
+        b.statusText.text = getString(R.string.status_connecting)
+    }
+
+    private fun updateStatusUIDisconnected() {
+        val b = binding ?: return
+        b.statusDot.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.danger_red))
+        b.statusText.text = getString(R.string.status_disconnected)
     }
 
     @SuppressLint("SetJavaScriptEnabled")

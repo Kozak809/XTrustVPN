@@ -19,6 +19,8 @@
     <string name="toast_services_success">Службы успешно запущены</string>
     <string name="toast_services_failure">Сбой при запуске служб</string>
 
+    <string name="status_connecting">Подключение</string>
+
     <!--ServerActivity-->
     <string name="title_server">Профиль</string>
     <string name="menu_item_add_config">Добавить профиль</string>

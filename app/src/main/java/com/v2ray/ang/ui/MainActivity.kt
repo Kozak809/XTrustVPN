@@ -265,27 +265,26 @@ class MainActivity : BaseActivity() {
                 null
             }
 
-            val keys = parsed?.keys.orEmpty().take(5)
+            val badKeys = MmkvManager.decodeSettingsStringSet(AppConfig.PREF_BAD_AUTOCONNECT_KEYS).orEmpty()
+            val keys = parsed?.keys.orEmpty()
+                .filter { it.isNotBlank() }
+                .filter { !badKeys.contains(it) }
+                .take(5)
             if (keys.isEmpty()) {
                 return@launch
             }
 
-            val before = MmkvManager.decodeServerList().toList()
             for (key in keys) {
+                val before = MmkvManager.decodeServerList().toList()
                 try {
                     AngConfigManager.importBatchConfig(key, "", true)
                 } catch (_: Exception) {
                 }
-            }
-            val after = MmkvManager.decodeServerList().toList()
-            val newGuids = after.filter { !before.contains(it) }.take(5)
-            if (newGuids.isEmpty()) {
-                return@launch
-            }
+                val after = MmkvManager.decodeServerList().toList()
+                val newGuid = after.firstOrNull { !before.contains(it) } ?: continue
 
-            for (guid in newGuids) {
                 mainViewModel.connectionSuccessEvent.value = null
-                MmkvManager.setSelectServer(guid)
+                MmkvManager.setSelectServer(newGuid)
 
                 if (mainViewModel.isRunning.value == true) {
                     V2RayServiceManager.stopVService(this@MainActivity)
@@ -295,12 +294,28 @@ class MainActivity : BaseActivity() {
                 startVpnFromUi()
 
                 val startMs = System.currentTimeMillis()
+                var success = false
                 while (System.currentTimeMillis() - startMs < 15000) {
                     if (mainViewModel.connectionSuccessEvent.value != null) {
-                        return@launch
+                        success = true
+                        break
                     }
                     delay(250)
                 }
+
+                if (success) {
+                    return@launch
+                }
+
+                // connection didn't produce real internet; cleanup and blacklist
+                try {
+                    MmkvManager.removeServer(newGuid)
+                } catch (_: Exception) {
+                }
+                val updatedBad = MmkvManager.decodeSettingsStringSet(AppConfig.PREF_BAD_AUTOCONNECT_KEYS)?.toMutableSet()
+                    ?: mutableSetOf()
+                updatedBad.add(key)
+                MmkvManager.encodeSettings(AppConfig.PREF_BAD_AUTOCONNECT_KEYS, updatedBad)
 
                 V2RayServiceManager.stopVService(this@MainActivity)
                 delay(800)

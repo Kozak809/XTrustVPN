@@ -31,6 +31,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.net.HttpURLConnection
+import java.net.URL
 import java.util.Collections
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
@@ -41,6 +44,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     var keywordFilter = ""
     val serversCache = mutableListOf<ServersCache>()
     val isRunning by lazy { MutableLiveData<Boolean>() }
+
+    enum class ConnectionState {
+        DISCONNECTED,
+        CONNECTING,
+        CONNECTED
+    }
+
+    val connectionState by lazy { MutableLiveData(ConnectionState.DISCONNECTED) }
+
+    fun markConnecting() {
+        connectionState.value = ConnectionState.CONNECTING
+    }
+
+    fun markDisconnected() {
+        connectionState.value = ConnectionState.DISCONNECTED
+    }
     val updateListAction by lazy { MutableLiveData<Int>() }
     val updateTestResultAction by lazy { MutableLiveData<String>() }
 
@@ -58,6 +77,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
      */
     fun startListenBroadcast() {
         isRunning.value = false
+        connectionState.value = ConnectionState.DISCONNECTED
         val mFilter = IntentFilter(AppConfig.BROADCAST_ACTION_ACTIVITY)
         ContextCompat.registerReceiver(getApplication(), mMsgReceiver, mFilter, Utils.receiverFlags())
         MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_REGISTER_CLIENT, "")
@@ -172,6 +192,41 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
             if (keywordFilter.isEmpty() || profile.remarks.lowercase().contains(keywordFilter.lowercase())) {
                 serversCache.add(ServersCache(guid, profile))
+            }
+        }
+    }
+
+    private fun checkInternetAfterConnect(): Boolean {
+        return checkInternetUrl(AppConfig.DELAY_TEST_URL) || checkInternetUrl(AppConfig.DELAY_TEST_URL2)
+    }
+
+    private fun checkInternetUrl(url: String): Boolean {
+        var conn: HttpURLConnection? = null
+        return try {
+            conn = (URL(url).openConnection() as HttpURLConnection).apply {
+                connectTimeout = 5000
+                readTimeout = 5000
+                instanceFollowRedirects = false
+                useCaches = false
+                setRequestProperty("Connection", "close")
+                setRequestProperty("User-Agent", "XTrustVPN")
+                requestMethod = "GET"
+            }
+            conn.connect()
+            val code = conn.responseCode
+
+            if (code == 204) return true
+            if (code in 200..299) {
+                val length = conn.getHeaderField("Content-Length")?.toLongOrNull() ?: -1
+                return length == 0L
+            }
+            false
+        } catch (_: Exception) {
+            false
+        } finally {
+            try {
+                conn?.disconnect()
+            } catch (_: Exception) {
             }
         }
     }
@@ -447,36 +502,54 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
                 AppConfig.MSG_STATE_NOT_RUNNING -> {
                     isRunning.value = false
+                    connectionState.value = ConnectionState.DISCONNECTED
                 }
 
                 AppConfig.MSG_STATE_START_SUCCESS -> {
-                    getApplication<AngApplication>().toastSuccess(R.string.toast_services_success)
                     isRunning.value = true
+                    connectionState.value = ConnectionState.CONNECTING
 
                     val guid = MmkvManager.getSelectServer().orEmpty()
                     val config = MmkvManager.decodeServerConfig(guid)
                     val serverName = config?.remarks.orEmpty().ifBlank { guid }
                     val serverAddress = config?.server.orEmpty()
 
-                    if (serverAddress.isNotBlank()) {
-                        MmkvManager.addConnectionLog(
-                            ConnectionLogEntry(
-                                timestampMillis = System.currentTimeMillis(),
-                                serverName = serverName,
-                                serverAddress = serverAddress
-                            )
-                        )
-                        connectionSuccessEvent.value = ConnectionSuccessInfo(serverName, serverAddress)
+                    viewModelScope.launch(Dispatchers.IO) {
+                        val ok = checkInternetAfterConnect()
+                        withContext(Dispatchers.Main) {
+                            if (!ok) {
+                                getApplication<AngApplication>().toastError(R.string.toast_services_failure)
+                                connectionState.value = ConnectionState.DISCONNECTED
+                                MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_STATE_STOP, "")
+                                return@withContext
+                            }
+
+                            connectionState.value = ConnectionState.CONNECTED
+                            getApplication<AngApplication>().toastSuccess(R.string.toast_services_success)
+
+                            if (serverAddress.isNotBlank()) {
+                                MmkvManager.addConnectionLog(
+                                    ConnectionLogEntry(
+                                        timestampMillis = System.currentTimeMillis(),
+                                        serverName = serverName,
+                                        serverAddress = serverAddress
+                                    )
+                                )
+                                connectionSuccessEvent.value = ConnectionSuccessInfo(serverName, serverAddress)
+                            }
+                        }
                     }
                 }
 
                 AppConfig.MSG_STATE_START_FAILURE -> {
                     getApplication<AngApplication>().toastError(R.string.toast_services_failure)
                     isRunning.value = false
+                    connectionState.value = ConnectionState.DISCONNECTED
                 }
 
                 AppConfig.MSG_STATE_STOP_SUCCESS -> {
                     isRunning.value = false
+                    connectionState.value = ConnectionState.DISCONNECTED
                 }
 
                 AppConfig.MSG_MEASURE_DELAY_SUCCESS -> {
