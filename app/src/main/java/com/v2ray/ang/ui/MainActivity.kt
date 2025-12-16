@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.google.gson.Gson
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.AppConfig.VPN
 import com.v2ray.ang.R
@@ -23,8 +24,12 @@ import com.v2ray.ang.handler.V2RayServiceManager
 import com.v2ray.ang.viewmodel.MainViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.net.HttpURLConnection
+import java.net.URL
+import java.util.Locale
 
 class MainActivity : BaseActivity() {
 
@@ -75,6 +80,17 @@ class MainActivity : BaseActivity() {
 
         setupViewModel()
         initializeDefaultProfile()
+
+        val manualLoc = MmkvManager.decodeSettingsBool(AppConfig.PREF_SELECTED_LOCATION_MANUAL, false)
+        if (!manualLoc) {
+            val existing = MmkvManager.decodeSettingsString(AppConfig.PREF_SELECTED_LOCATION, "").orEmpty()
+            if (existing.isBlank()) {
+                val country = Locale.getDefault().country.orEmpty().uppercase()
+                if (country.isNotBlank()) {
+                    MmkvManager.encodeSettings(AppConfig.PREF_SELECTED_LOCATION, country)
+                }
+            }
+        }
 
         setupBottomNav(savedInstanceState)
 
@@ -207,4 +223,91 @@ class MainActivity : BaseActivity() {
             startV2Ray()
         }
     }
+
+    fun navigateToHomeTab() {
+        binding.bottomNav.selectedItemId = R.id.nav_home
+    }
+
+    private data class LocationApiResponse(
+        val location: String?,
+        val count_available: Int?,
+        val keys: List<String>?
+    )
+
+    fun startAutoConnectForLocation(code: String) {
+        val normalized = code.uppercase()
+        MmkvManager.encodeSettings(AppConfig.PREF_SELECTED_LOCATION, normalized)
+
+        locationConnectJob?.cancel()
+        locationConnectJob = lifecycleScope.launch {
+            val response = withContext(Dispatchers.IO) {
+                val url = URL("https://testtrustvpnapi.matrixqweqwe1123.workers.dev/api/location/$normalized")
+                try {
+                    val conn = (url.openConnection() as HttpURLConnection).apply {
+                        connectTimeout = 10000
+                        readTimeout = 10000
+                        requestMethod = "GET"
+                        setRequestProperty("User-Agent", "XTrustVPN")
+                    }
+                    conn.inputStream.bufferedReader().use { it.readText() }
+                } catch (_: Exception) {
+                    null
+                }
+            }
+
+            if (response.isNullOrBlank()) {
+                return@launch
+            }
+
+            val parsed = try {
+                gson.fromJson(response, LocationApiResponse::class.java)
+            } catch (_: Exception) {
+                null
+            }
+
+            val keys = parsed?.keys.orEmpty().take(5)
+            if (keys.isEmpty()) {
+                return@launch
+            }
+
+            val before = MmkvManager.decodeServerList().toList()
+            for (key in keys) {
+                try {
+                    AngConfigManager.importBatchConfig(key, "", true)
+                } catch (_: Exception) {
+                }
+            }
+            val after = MmkvManager.decodeServerList().toList()
+            val newGuids = after.filter { !before.contains(it) }.take(5)
+            if (newGuids.isEmpty()) {
+                return@launch
+            }
+
+            for (guid in newGuids) {
+                mainViewModel.connectionSuccessEvent.value = null
+                MmkvManager.setSelectServer(guid)
+
+                if (mainViewModel.isRunning.value == true) {
+                    V2RayServiceManager.stopVService(this@MainActivity)
+                    delay(800)
+                }
+
+                startVpnFromUi()
+
+                val startMs = System.currentTimeMillis()
+                while (System.currentTimeMillis() - startMs < 15000) {
+                    if (mainViewModel.connectionSuccessEvent.value != null) {
+                        return@launch
+                    }
+                    delay(250)
+                }
+
+                V2RayServiceManager.stopVService(this@MainActivity)
+                delay(800)
+            }
+        }
+    }
+
+    private val gson = Gson()
+    private var locationConnectJob: Job? = null
 }
