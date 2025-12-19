@@ -1,84 +1,49 @@
-# Ignore data and key store files
-*.dat
-*.jks
-
-# Ignore output JSON file
-XTrustVPN/app/release/output.json
-
-# Ignore IDE and build system directories
-.idea/
+# Gradle и папки сборки
 .gradle/
-*.iml
+build/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
 
-# Ignore local properties and DS_Store files
-/local.properties
-.DS_Store
-
-# Ignore build directories and captures
-/build
-/captures
-XTrustVPN/app/build
-XTrustVPN/build
-XTrustVPN/local.properties
-
-# Ignore APK and AAR files
+# Android и логи
 *.apk
 *.aar
-
-# Ignore signing properties
-signing.properties
-
-# Ignore shared object files
-*.so
-
-# Ignore Google services JSON
-XTrustVPN/app/google-services.json
-
-# Additional common Android/Java ignores
 *.log
-*.tmp
-*.bak
-*.swp
-*.orig
-*.class
-*.jar
-*.war
-*.ear
+/app/libs/
+/app/src/main/assets/sing-box
+/service_account_credentials.json
+jniLibs/
+/library/libcore_build/
+/nkmr
 
-# Ignore executable files
-*.exe
-*.dll
-*.obj
-*.o
-*.pyc
-*.pyo
-
-# Ignore files from other IDEs
+# IDE
+.idea/
+*.iml
 .vscode/
 .classpath
 .project
 .settings/
 *.sublime-workspace
 *.sublime-project
+.idea/deploymentTargetDropDown.xml
 
-# Ignore OS-specific files
+# Секреты и конфиги (важно!)
+*.keystore
+*.jks
+signing.properties
+google-services.json
+service_account_credentials.json
+
+# Системные файлы
+.DS_Store
 Thumbs.db
-.DS_Store
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+*.tmp
+*.bak
+*.swp
 
-# Исключаем папки сборки во всех модулях
-**/build/
+# Бэкапы и внешние данные
+/_legacy_backup/
+/external/
+/XTrustVPN/app/release/output.json

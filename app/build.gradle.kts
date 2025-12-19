@@ -1,205 +1,88 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    id("com.jaredsburrows.license")
+    id("com.android.application")
+    id("kotlin-android")
+    id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
 }
 
+setupApp()
+
 android {
-    namespace = "com.v2ray.ang"
-    compileSdk = 35
-
-    defaultConfig {
-        applicationId = "com.kozak.xtrustvpn"
-        minSdk = 21
-        targetSdk = 35
-        versionCode = 683
-        versionName = "1.10.31"
-        multiDexEnabled = true
-
-        val abiFilterList = (properties["ABI_FILTERS"] as? String)?.split(';')
-        splits {
-            abi {
-                // Build a single universal APK to avoid install failures from wrong ABI split APKs.
-                isEnable = true
-                reset()
-                if (abiFilterList != null && abiFilterList.isNotEmpty()) {
-                    include(*abiFilterList.toTypedArray())
-                } else {
-                    include(
-                        "arm64-v8a",
-                        "armeabi-v7a",
-                        "x86_64",
-                        "x86"
-                    )
-                }
-                isUniversalApk = true
-            }
-        }
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    // --- НАЧАЛО: НАСТРОЙКА ПОДПИСИ ---
-    signingConfigs {
-        create("release") {
-            storeFile = file("my-release-key.jks")
-            storePassword = "kozakpass"
-            keyAlias = "my-alias"
-            keyPassword = "kozakpass"
-        }
-    }
-    // --- КОНЕЦ: НАСТРОЙКА ПОДПИСИ ---
-
-    buildTypes {
-        release {
-            // --- ПРИМЕНЯЕМ ПОДПИСЬ ---
-            signingConfig = signingConfigs.getByName("release")
-            
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-
-    flavorDimensions.add("distribution")
-    productFlavors {
-        create("fdroid") {
-            dimension = "distribution"
-            applicationIdSuffix = ".fdroid"
-            buildConfigField("String", "DISTRIBUTION", "\"F-Droid\"")
-        }
-        create("playstore") {
-            dimension = "distribution"
-            buildConfigField("String", "DISTRIBUTION", "\"Play Store\"")
-        }
-    }
-
-    sourceSets {
-        getByName("main") {
-            jniLibs.srcDirs("libs")
-            assets.srcDirs("src/main/assets", "../AndroidLibXrayLite/assets")
-        }
-    }
-
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    ksp {
+        arg("room.incremental", "true")
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
-
-    applicationVariants.all {
-        val variant = this
-        val isFdroid = variant.productFlavors.any { it.name == "fdroid" }
-        if (isFdroid) {
-            val versionCodes =
-                mapOf(
-                    "armeabi-v7a" to 2, "arm64-v8a" to 1, "x86" to 4, "x86_64" to 3, "universal" to 0
-                )
-
-            variant.outputs
-                .map { it as com.android.build.gradle.internal.api.ApkVariantOutputImpl }
-                .forEach { output ->
-                    val abi = output.getFilter("ABI") ?: "universal"
-                    output.outputFileName = "XTrustVPN_${variant.versionName}-fdroid_${abi}.apk"
-                    if (versionCodes.containsKey(abi)) {
-                        output.versionCodeOverride =
-                            (100 * variant.versionCode + versionCodes[abi]!!).plus(5000000)
-                    } else {
-                        return@forEach
-                    }
-                }
-        } else {
-            val versionCodes =
-                mapOf("armeabi-v7a" to 4, "arm64-v8a" to 4, "x86" to 4, "x86_64" to 4, "universal" to 4)
-
-            variant.outputs
-                .map { it as com.android.build.gradle.internal.api.ApkVariantOutputImpl }
-                .forEach { output ->
-                    val abi = if (output.getFilter("ABI") != null)
-                        output.getFilter("ABI")
-                    else
-                        "universal"
-
-                    output.outputFileName = "XTrustVPN_${variant.versionName}_${abi}.apk"
-                    if (versionCodes.containsKey(abi)) {
-                        output.versionCodeOverride =
-                            (1000000 * versionCodes[abi]!!).plus(variant.versionCode)
-                    } else {
-                        return@forEach
-                    }
-                }
+    bundle {
+        language {
+            enableSplit = false
         }
     }
-
     buildFeatures {
-        viewBinding = true
         buildConfig = true
+        viewBinding = true
+        aidl = true
     }
-
+    namespace = "com.kozak.xtrustvpn"
     packaging {
         jniLibs {
             useLegacyPackaging = true
         }
     }
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 dependencies {
-    // Core Libraries
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
 
-    // AndroidX Core Libraries
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.preference.ktx)
-    implementation(libs.recyclerview)
-    implementation(libs.androidx.swiperefreshlayout)
+    implementation(fileTree("libs"))
 
-    // UI Libraries
-    implementation(libs.material)
-    implementation(libs.toasty)
-    implementation(libs.editorkit)
-    implementation(libs.flexbox)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("androidx.activity:activity-ktx:1.10.1")
+    implementation("androidx.fragment:fragment-ktx:1.5.6")
+    implementation("androidx.browser:browser:1.5.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+    implementation("androidx.work:work-multiprocess:2.8.1")
 
-    // Data and Storage Libraries
-    implementation(libs.mmkv.static)
-    implementation(libs.gson)
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("com.google.code.gson:gson:2.9.0")
 
-    // Reactive and Utility Libraries
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.core)
+    implementation("com.github.jenly1314:zxing-lite:2.1.1")
+    implementation("com.blacksquircle.ui:editorkit:2.6.0")
+    implementation("com.blacksquircle.ui:language-base:2.6.0")
+    implementation("com.blacksquircle.ui:language-json:2.6.0")
 
-    // Language and Processing Libraries
-    implementation(libs.language.base)
-    implementation(libs.language.json)
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+    implementation("org.yaml:snakeyaml:1.30")
+    implementation("com.github.daniel-stoneuk:material-about-library:3.2.0-rc01")
+    implementation("com.jakewharton:process-phoenix:2.1.2")
+    implementation("com.esotericsoftware:kryo:5.2.1")
+    implementation("com.google.guava:guava:31.0.1-android")
+    implementation("org.ini4j:ini4j:0.5.4")
 
-    // Intent and Utility Libraries
-    implementation(libs.quickie.foss)
-    implementation(libs.core)
+    implementation("com.simplecityapps:recyclerview-fastscroll:2.0.1") {
+        exclude(group = "androidx.recyclerview")
+        exclude(group = "androidx.appcompat")
+    }
 
-    // AndroidX Lifecycle and Architecture Components
-    implementation(libs.lifecycle.viewmodel.ktx)
-    implementation(libs.lifecycle.livedata.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
+    implementation("androidx.room:room-runtime:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("com.github.MatrixDev.Roomigrant:RoomigrantLib:0.3.4")
+    ksp("com.github.MatrixDev.Roomigrant:RoomigrantCompiler:0.3.4")
 
-    // Background Task Libraries
-    implementation(libs.work.runtime.ktx)
-    implementation(libs.work.multiprocess)
-
-    // Multidex Support
-    implementation(libs.multidex)
-
-    // Testing Libraries
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    testImplementation(libs.org.mockito.mockito.inline)
-    testImplementation(libs.mockito.kotlin)
-    coreLibraryDesugaring(libs.desugar.jdk.libs)
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
 }

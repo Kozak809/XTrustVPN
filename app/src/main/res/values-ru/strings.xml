@@ -1,399 +1,492 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_widget_name">XTrustVPN</string>
-    <string name="app_tile_name">XTrustVPN</string>
-    <string name="app_tile_first_use">Первое использование этой функции, пожалуйста, используйте приложение, чтобы добавить сервер</string>
-    <string name="navigation_drawer_open">Открыть панель навигации</string>
-    <string name="navigation_drawer_close">Закрыть панель навигации</string>
-    <string name="migration_success">Успешный перенос данных!</string>
-    <string name="migration_fail">Перенос данных не выполнен!</string>
-    <string name="pull_down_to_refresh">Потяните вниз для обновления!</string>
-
-    <!-- Notifications -->
-    <string name="notification_action_stop_v2ray">Остановить</string>
-    <string name="toast_permission_denied">Разрешение не получено</string>
-    <string name="toast_permission_denied_notification">Разрешение на отображение уведомлений не получено</string>
-    <string name="notification_action_more">Ещё…</string>
-    <string name="toast_services_start">Запуск служб</string>
-    <string name="toast_services_stop">Остановка служб</string>
-    <string name="toast_services_success">Службы успешно запущены</string>
-    <string name="toast_services_failure">Сбой при запуске служб</string>
-
-    <string name="status_connecting">Подключение</string>
-
-    <!--ServerActivity-->
-    <string name="title_server">Профиль</string>
-    <string name="menu_item_add_config">Добавить профиль</string>
-    <string name="menu_item_save_config">Сохранить профиль</string>
-    <string name="menu_item_del_config">Удалить профиль</string>
-    <string name="menu_item_import_config_qrcode">Импорт из QR-кода</string>
-    <string name="menu_item_import_config_clipboard">Импорт из буфера обмена</string>
-    <string name="menu_item_import_config_local">Импорт из файла</string>
-    <string name="menu_item_import_config_manually_vmess">Ручной ввод VMess</string>
-    <string name="menu_item_import_config_manually_vless">Ручной ввод VLESS</string>
-    <string name="menu_item_import_config_manually_ss">Ручной ввод Shadowsocks</string>
-    <string name="menu_item_import_config_manually_socks">Ручной ввод SOCKS</string>
-    <string name="menu_item_import_config_manually_http">Ручной ввод HTTP</string>
-    <string name="menu_item_import_config_manually_trojan">Ручной ввод Trojan</string>
-    <string name="menu_item_import_config_manually_wireguard">Ручной ввод WireGuard</string>
-    <string name="menu_item_import_config_manually_hysteria2">Ручной ввод Hysteria2</string>
-    <string name="del_config_comfirm">Подтверждаете удаление?</string>
-    <string name="del_invalid_config_comfirm">Выполните проверку перед удалением! Подтверждаете удаление?</string>
-    <string name="server_lab_remarks">Название</string>
-    <string name="server_lab_address">Адрес</string>
-    <string name="server_lab_port">Порт</string>
-    <string name="server_lab_id">ID</string>
-    <string name="server_lab_alterid">Альтернативный ID</string>
-    <string name="server_lab_security">Безопасность</string>
-    <string name="server_lab_network">Сеть</string>
-    <string name="server_lab_more_function">Транспорт</string>
-    <string name="server_lab_head_type">Тип заголовка</string>
-    <string name="server_lab_mode_type">Режим gRPC</string>
-    <string name="server_lab_request_host">Узел</string>
-    <string name="server_lab_request_host_http">Узел HTTP</string>
-    <string name="server_lab_request_host_ws">Узел WS</string>
-    <string name="server_lab_request_host_httpupgrade">Узел HTTPUpgrade</string>
-    <string name="server_lab_request_host_xhttp">Узел XHTTP</string>
-    <string name="server_lab_request_host_h2">Узел H2</string>
-    <string name="server_lab_request_host_quic">Шифрование QUIC</string>
-    <string name="server_lab_request_host_grpc">Полномочия gRPC</string>
-    <string name="server_lab_path">Путь</string>
-    <string name="server_lab_path_ws">Путь WS</string>
-    <string name="server_lab_path_httpupgrade">Путь HTTPUpgrade</string>
-    <string name="server_lab_path_xhttp">Путь XHTTP</string>
-    <string name="server_lab_path_h2">Путь H2</string>
-    <string name="server_lab_path_quic">Ключ QUIC</string>
-    <string name="server_lab_path_kcp">Сид KCP</string>
-    <string name="server_lab_path_grpc">Служба gRPC</string>
-    <string name="server_lab_stream_security">TLS</string>
-    <string name="server_lab_stream_fingerprint">Отпечаток</string>
-    <string name="server_lab_stream_alpn">ALPN</string>
-    <string name="server_lab_allow_insecure">Разрешать небезопасные</string>
-    <string name="server_lab_sni">SNI</string>
-    <string name="server_lab_address3">Адрес</string>
-    <string name="server_lab_port3">Порт</string>
-    <string name="server_lab_id3">Пароль</string>
-    <string name="server_lab_security3">Безопасность</string>
-    <string name="server_lab_id4">Пароль (необязательно)</string>
-    <string name="server_lab_security4">Пользователь (необязательно)</string>
-    <string name="server_lab_encryption">Шифрование</string>
-    <string name="server_lab_flow">Поток</string>
-    <string name="server_lab_public_key">Открытый ключ</string>
-    <string name="server_lab_preshared_key">Дополнительный ключ шифрования (необязательно)</string>
-    <string name="server_lab_short_id">ShortID</string>
-    <string name="server_lab_spider_x">SpiderX</string>
-    <string name="server_lab_mldsa65_verify">mldsa65Verify</string>
-    <string name="server_lab_secret_key">Закрытый ключ</string>
-    <string name="server_lab_reserved">Reserved (необязательно, через запятую)</string>
-    <string name="server_lab_local_address">Локальный адрес (необязательно, IPv4/IPv6 через запятую)</string>
-    <string name="server_lab_local_mtu">MTU (необязательно, по умолчанию 1420)</string>
-    <string name="toast_success">Успешно</string>
-    <string name="toast_failure">Ошибка</string>
-    <string name="toast_none_data">Ничего нет</string>
-    <string name="toast_incorrect_protocol">Неправильный протокол</string>
-    <string name="toast_decoding_failed">Невозможно декодировать</string>
-    <string name="title_file_chooser">Выберите профиль</string>
-    <string name="toast_require_file_manager">Установите файловый менеджер</string>
-    <string name="server_customize_config">Изменить профиль</string>
-    <string name="toast_config_file_invalid">Неправильный профиль</string>
-    <string name="server_lab_content">Данные</string>
-    <string name="toast_none_data_clipboard">В буфере обмена нет данных</string>
-    <string name="toast_invalid_url">Неправильный URL</string>
-    <string name="toast_insecure_url_protocol">Не используйте небезопасный HTTP-протокол в адресе подписки</string>
-    <string name="server_lab_need_inbound">Убедитесь, что входящий порт соответствует настройкам</string>
-    <string name="toast_malformed_josn">Профиль повреждён</string>
-    <string name="server_lab_request_host6">Узел (SNI) (необязательно)</string>
-    <string name="toast_action_not_allowed">Это действие запрещено</string>
-    <string name="server_obfs_password">Пароль obfs</string>
-    <string name="server_lab_port_hop">Смена портов (переопределяет порт)</string>
-    <string name="server_lab_port_hop_interval">Интервал смены портов</string>
-    <string name="server_lab_stream_pinsha256">pinSHA256</string>
-    <string name="server_lab_bandwidth_down">Входящая пропускная способность (допускаются: k/m/g/t)</string>
-    <string name="server_lab_bandwidth_up">Исходящая пропускная способность (допускаются: k/m/g/t)</string>
-    <string name="server_lab_xhttp_mode">Режим XHTTP</string>
-    <string name="server_lab_xhttp_extra">Необработанный JSON XHTTP Extra, формат: { XHTTPObject }</string>
-
-    <!-- UserAssetActivity -->
-    <string name="toast_asset_copy_failed">Невозможно скопировать файл, используйте файловый менеджер</string>
-    <string name="menu_item_add_asset">Добавить ресурс</string>
-    <string name="menu_item_add_file">Добавить файлы</string>
-    <string name="menu_item_add_url">Добавить URL</string>
-    <string name="menu_item_scan_qrcode">Сканировать QR-код</string>
-    <string name="title_url">URL</string>
-    <string name="menu_item_download_file">Загрузить файлы</string>
-    <string name="title_user_asset_add_url">Добавить URL ресурса</string>
-    <string name="msg_file_not_found">Файл не найден</string>
-    <string name="msg_remark_is_duplicate">Название уже существует</string>
-    <string name="asset_geo_files_sources">Источник геофайлов (необязательно)</string>
-
-    <!-- PerAppProxyActivity -->
-    <string name="msg_dialog_progress">Загрузка…</string>
-    <string name="menu_item_search">Поиск</string>
-    <string name="menu_item_select_all">Выбрать все</string>
-    <string name="msg_enter_keywords">Введите ключевые слова</string>
-    <string name="switch_bypass_apps_mode">Режим обхода</string>
-    <string name="menu_item_select_proxy_app">Автовыбор приложений</string>
-    <string name="msg_downloading_content">Загрузка данных</string>
-    <string name="menu_item_export_proxy_app">Экспорт в буфер обмена</string>
-    <string name="menu_item_import_proxy_app">Импорт из буфера обмена</string>
-    <string name="per_app_proxy_settings">Выбор приложений</string>
-    <string name="per_app_proxy_settings_enable">Использовать выбор приложений</string>
-
-    <!-- Preferences -->
-    <string name="title_settings">Настройки</string>
-    <string name="title_advanced">Расширенные настройки</string>
-    <string name="title_core_settings">Настройки ядра</string>
-    <string name="title_vpn_settings">Настройки VPN</string>
-    <string name="title_pref_per_app_proxy">Прокси для выбранных приложений</string>
-    <string name="summary_pref_per_app_proxy">Основной: выбранное приложение соединяется через прокси, не выбранное — напрямую;\nРежим обхода: выбранное приложение соединяется напрямую, не выбранное — через прокси.\nЕсть возможность автоматического выбора проксируемых приложений в меню.</string>
-    <string name="title_pref_is_booted">Автоподключение при запуске</string>
-    <string name="summary_pref_is_booted">Автоматически подключаться к выбранному серверу при запуске приложения (может оказаться неудачным)</string>
-
-    <string name="title_mux_settings">Настройки мультиплексирования</string>
-    <string name="title_pref_mux_enabled">Использовать мультиплексирование</string>
-    <string name="summary_pref_mux_enabled">Быстрее, но это может привести к нестабильному соединению.\nНиже можно настроить обработку TCP, UDP и QUIC.</string>
-    <string name="title_pref_mux_concurency">TCP-соединения (диапазон от 1 до 1024)</string>
-    <string name="title_pref_mux_xudp_concurency">XUDP-соединения (диапазон от 1 до 1024)</string>
-    <string name="title_pref_mux_xudp_quic">Обработка QUIC в мультиплексном туннеле</string>
-    <string-array name="mux_xudp_quic_entries">
-        <item>Отклонять</item>
-        <item>Разрешать</item>
-        <item>Пропускать</item>
-    </string-array>
-
-    <string name="title_pref_speed_enabled">Показывать скорость</string>
-    <string name="summary_pref_speed_enabled">Показывать текущую скорость в уведомлении.\nЗначок будет меняться в зависимости от использования.</string>
-
-    <string name="title_pref_sniffing_enabled">Анализировать пакеты</string>
-    <string name="summary_pref_sniffing_enabled">Пытаться определелять доменные имена в пакетах (по умолчанию включено)</string>
-    <string name="title_pref_route_only_enabled">Домен только для маршрутизации</string>
-    <string name="summary_pref_route_only_enabled">Использовать доменное имя только для маршрутизации и сохранять целевой адрес в виде IP.</string>
-
-    <string name="title_pref_local_dns_enabled">Использовать локальную DNS</string>
-    <string name="summary_pref_local_dns_enabled">Обслуживание выполняется DNS-модулем ядра (в настройках маршрутизации рекомендуется выбрать режим «Все, кроме LAN и Китая»)</string>
-
-    <string name="title_pref_fake_dns_enabled">Использовать поддельную DNS</string>
-    <string name="summary_pref_fake_dns_enabled">Локальная DNS возвращает поддельные IP-адреса (быстрее, но может не работать с некоторыми приложениями)</string>
-
-    <string name="title_pref_prefer_ipv6">Предпочитать IPv6</string>
-    <string name="summary_pref_prefer_ipv6">Использовать маршрутизацию IPv6 предпочитать IPv6-адреса</string>
-
-    <string name="title_pref_remote_dns">Удалённая DNS (UDP/TCP/HTTPS/QUIC) (необязательно)</string>
-    <string name="summary_pref_remote_dns">DNS</string>
-
-    <string name="title_pref_vpn_dns">VPN DNS (только IPv4/v6)</string>
-    <string name="title_pref_vpn_bypass_lan">VPN обходит LAN</string>
-
-    <string name="title_pref_vpn_interface_address">Адрес интерфейса VPN</string>
-    <string name="title_pref_vpn_mtu">VPN MTU (по умолчанию 1500)</string>
-
-    <string name="title_pref_domestic_dns">Внутренняя DNS (необязательно)</string>
-    <string name="summary_pref_domestic_dns">DNS</string>
-
-    <string name="title_pref_dns_hosts">Узлы DNS (формат: домен:адрес,…)</string>
-    <string name="summary_pref_dns_hosts">домен:адрес,…</string>
-
-    <string name="title_pref_delay_test_url">Сервис проверки задержки (HTTP/HTTPS)</string>
-    <string name="summary_pref_delay_test_url">URL</string>
-
-    <string name="title_pref_proxy_sharing_enabled">Разрешать подключения из LAN</string>
-    <string name="summary_pref_proxy_sharing_enabled">Другие устройства могут подключаться, используя ваш IP-адрес, чтобы использовать локальный прокси. Используйте только в доверенной сети, чтобы избежать несанкционированного подключения.</string>
-    <string name="toast_warning_pref_proxysharing_short">Доступ из LAN разрешён, убедитесь, что вы находитесь в доверенной сети</string>
-
-    <string name="title_pref_allow_insecure">Разрешать небезопасные соединения</string>
-    <string name="summary_pref_allow_insecure">Для TLS по умолчанию разрешены небезопасные соединения</string>
-
-    <string name="title_pref_socks_port">Порт локального прокси</string>
-    <string name="summary_pref_socks_port">Порт локального прокси</string>
-
-    <string name="title_pref_local_dns_port">Порт локальной DNS</string>
-    <string name="summary_pref_local_dns_port">Порт локальной DNS</string>
-
-    <string name="title_pref_confirm_remove">Подтверждать удаление профиля</string>
-    <string name="summary_pref_confirm_remove">Обязательное подтверждение удаления профиля</string>
-
-    <string name="title_pref_start_scan_immediate">Сканировать при запуске</string>
-    <string name="summary_pref_start_scan_immediate">Начинать сканирование сразу при запуске приложения или запускать функцию сканирования камерой или из изображения через панель инструментов</string>
-
-    <string name="title_pref_append_http_proxy">Дополнительный HTTP-прокси</string>
-    <string name="summary_pref_append_http_proxy">HTTP-прокси будет использоваться напрямую (из браузера и других поддерживающих приложений), минуя виртуальный сетевой адаптер (Android 10+)</string>
-
-    <string name="title_pref_double_column_display">Профили в два столбца</string>
-    <string name="summary_pref_double_column_display">Список профилей отображается двумя столбцами, что позволяет показать больше информации на экране. Требуется перезапуск приложения.</string>
-
-    <!-- AboutActivity -->
-    <string name="title_pref_feedback">Обратная связь</string>
-    <string name="summary_pref_feedback">Предложить улучшение или сообщить об ошибке на GitHub</string>
-    <string name="summary_pref_tg_group">Присоединиться к группе в Telegram</string>
-    <string name="toast_tg_app_not_found">Приложение Telegram не найдено</string>
-    <string name="title_privacy_policy">Политика конфиденциальности</string>
-    <string name="title_about">О приложении</string>
-    <string name="title_source_code">Исходный код</string>
-    <string name="title_oss_license">Лицензии открытого исходного кода</string>
-    <string name="title_tg_channel">Telegram-канал</string>
-    <string name="title_configuration_backup">Резервирование конфигурации</string>
-    <string name="summary_configuration_backup">Путь: [%s]. Резервная копия будет стёрта при удалении приложения или очистке хранилища.</string>
-    <string name="title_configuration_restore">Восстановление конфигурации</string>
-    <string name="title_configuration_share">Поделиться конфигурацией</string>
-
-    <string name="title_pref_promotion">Содействие</string>
-    <string name="summary_pref_promotion">Содействие, нажмите для получения подробной информации (пожертвование может быть удалено)</string>
-
-    <string name="title_pref_auto_update_subscription">Автоматически обновлять подписки</string>
-    <string name="summary_pref_auto_update_subscription">Автоматическое обновление подписок в фоновом режиме с указанным интервалом. В зависимости от устройства эта функция может работать не всегда.</string>
-    <string name="title_pref_auto_update_interval">Интервал автообновления (минут, не менее 15)</string>
-
-    <string name="title_core_loglevel">Подробность ведения журнала</string>
-    <string name="title_outbound_domain_resolve_method">Предопределение исходящего домена</string>
-    <string name="title_mode">Режим</string>
-    <string name="title_mode_help">Нажмите для получения дополнительной информации</string>
-    <string name="title_language">Язык</string>
-    <string name="title_ui_settings">Настройки интерфейса</string>
-    <string name="title_pref_ui_mode_night">Тема интерфейса</string>
-    <string name="title_pref_use_hev_tunnel">Использовать новую версию TUN</string>
-    <string name="summary_pref_use_hev_tunnel">Если включено, TUN будет использовать hev-socks5-tunnel, иначе будет использоваться badvpn-tun2socks</string>
-    <string name="title_pref_hev_tunnel_loglevel">Подробность журнала HevTun</string>
-    <string name="title_pref_hev_tunnel_rw_timeout">Время ожидания чтения/записи HevTun (мс, по умолчанию 300000)</string>
-
-    <string name="title_logcat">Журнал</string>
-    <string name="logcat_copy">Копировать</string>
-    <string name="logcat_clear">Очистить</string>
-    <string name="title_service_restart">Перезапуск службы</string>
-    <string name="title_del_all_config">Удалить профили группы</string>
-    <string name="title_del_duplicate_config">Удалить дубликаты профилей группы</string>
-    <string name="title_del_invalid_config">Удалить нерабочие профили группы</string>
-    <string name="title_export_all">Экспорт профилей группы в буфер обмена</string>
-    <string name="title_sub_setting">Группы</string>
-    <string name="sub_setting_remarks">Название</string>
-    <string name="sub_setting_url">URL (необязательно)</string>
-    <string name="sub_setting_user_agent">User Agent</string>
-    <string name="sub_setting_filter">Название фильтра</string>
-    <string name="sub_setting_enable">Использовать обновление</string>
-    <string name="sub_auto_update">Использовать автообновление</string>
-    <string name="sub_allow_insecure_url">Разрешать незащищённые HTTP-адреса</string>
-    <string name="sub_setting_pre_profile">Предыдущая конфигурация прокси</string>
-    <string name="sub_setting_next_profile">Следующая конфигурация прокси</string>
-    <string name="sub_setting_pre_profile_tip">Конфигурация должна быть уникальной</string>
-    <string name="title_sub_update">Обновить подписку группы</string>
-    <string name="title_ping_all_server">Пинг-тест профилей группы</string>
-    <string name="title_real_ping_all_server">URL-тест профилей группы</string>
-    <string name="title_create_intelligent_selection_all_server">Создать конфигурацию умного выбора</string>
-    <string name="title_user_asset_setting">Файлы ресурсов</string>
-    <string name="title_sort_by_test_results">Сортировать по результатам теста</string>
-    <string name="title_filter_config">Фильтр профилей</string>
-    <string name="filter_config_all">Все группы</string>
-    <string name="title_del_duplicate_config_count">Удалено дубликатов профилей: %d</string>
-    <string name="title_del_config_count">Удалено профилей: %d</string>
-    <string name="title_import_config_count">Импортировано профилей: %d</string>
-    <string name="title_export_config_count">Экспортировано профилей: %d</string>
-    <string name="title_update_config_count">Обновлено профилей: %d</string>
-
-    <string name="tasker_start_service">Запуск службы</string>
-    <string name="tasker_setting_confirm">Подтвердить</string>
-
-    <!-- RoutingSettingActivity -->
-    <string name="routing_settings_domain_strategy">Доменная стратегия</string>
-    <string name="routing_settings_title">Маршрутизация</string>
-    <string name="routing_settings_tips">Введите требуемые домены/IP через запятую</string>
-    <string name="routing_settings_save">Сохранить</string>
-    <string name="routing_settings_delete">Очистить</string>
-    <string name="routing_settings_rule_title">Настройка правил маршрутизации</string>
-    <string name="routing_settings_add_rule">Добавить правило</string>
-    <string name="routing_settings_import_predefined_rulesets">Импорт набора правил</string>
-    <string name="routing_settings_import_rulesets_tip">Существующие правила будут удалены. Продолжить?</string>
-    <string name="routing_settings_import_rulesets_from_clipboard">Импорт правил из буфера обмена</string>
-    <string name="routing_settings_import_rulesets_from_qrcode">Импорт правил из QR-кода</string>
-    <string name="routing_settings_export_rulesets_to_clipboard">Экспорт правил в буфер обмена</string>
-    <string name="routing_settings_locked">Постоянное (сохранится при импорте правил)</string>
-    <string name="routing_settings_domain">Домен</string>
-    <string name="routing_settings_ip">IP</string>
-    <string name="routing_settings_port">Порт</string>
-    <string name="routing_settings_protocol">Протокол</string>
-    <string name="routing_settings_protocol_tip">[http,tls,bittorrent]</string>
-    <string name="routing_settings_network">Сеть</string>
-    <string name="routing_settings_network_tip">[udp|tcp]</string>
-    <string name="routing_settings_outbound_tag">Исходящее подключение</string>
-
-    <string name="connection_test_pending">Проверить подключение</string>
-    <string name="connection_test_testing">Проверка…</string>
-    <string name="connection_test_testing_count">Проверка профилей (%d)</string>
-    <string name="connection_test_available">Успешно: соединение заняло %d мс</string>
-    <string name="connection_test_error">Сбой проверки интернет-соединения: %s</string>
-    <string name="connection_test_fail">Интернет недоступен</string>
-    <string name="connection_test_error_status_code">Код ошибки: #%d</string>
-    <string name="connection_connected">Подключено, нажмите для проверки</string>
-    <string name="connection_not_connected">Не подключено</string>
-
-    <string name="import_subscription_success">Подписка импортирована</string>
-    <string name="import_subscription_failure">Невозможно импортировать подписку</string>
-    <string name="title_fragment_settings">Настройки фрагментирования</string>
-    <string name="title_pref_fragment_packets">Фрагментирование пакетов</string>
-    <string name="title_pref_fragment_length">Длина фрагмента (от - до)</string>
-    <string name="title_pref_fragment_interval">Интервал фрагментов (от - до)</string>
-    <string name="title_pref_fragment_enabled">Использовать фрагментирование</string>
-
-    <string name="update_check_for_update">Проверить обновление</string>
-    <string name="update_already_latest_version">Установлена последняя версия</string>
-    <string name="update_new_version_found">Найдена новая версия: %s</string>
-    <string name="update_now">Обновить</string>
-    <string name="update_check_pre_release">Искать предварительный выпуск</string>
-    <string name="update_checking_for_update">Проверка обновления…</string>
-
-    <string-array name="share_method">
-        <item>QR-код</item>
-        <item>Экспорт в буфер обмена</item>
-        <item>Экспорт всей конфигурации в буфер обмена</item>
-    </string-array>
-
-    <string-array name="share_method_more">
-        <item>QR-код</item>
-        <item>Экспорт в буфер обмена</item>
-        <item>Экспорт всей конфигурации в буфер обмена</item>
-        <item>Изменить</item>
-        <item>Удалить</item>
-    </string-array>
-
-    <string-array name="share_sub_method">
-        <item>QR-код</item>
-        <item>Экспорт в буфер обмена</item>
-    </string-array>
-
-    <string-array name="mode_entries">
-        <item>VPN</item>
-        <item>Прокси</item>
-    </string-array>
-
-    <string-array name="ui_mode_night">
-        <item>Как в системе</item>
-        <item>Светлая</item>
-        <item>Тёмная</item>
-    </string-array>
-
-    <string-array name="preset_rulesets">
-        <item>Белый список Китая</item>
-        <item>Чёрный список Китая</item>
-        <item>Общие</item>
-        <item>Белый список Ирана</item>
-    </string-array>
-
-    <string-array name="vpn_bypass_lan">
-        <item>Как в профиле</item>
-        <item>Обходит</item>
-        <item>Не обходит</item>
-    </string-array>
-
-    <string-array name="outbound_domain_resolve_method">
-        <item>Не определять</item>
-        <item>Определять и добавлять к узлам DNS</item>
-        <item>Определять и заменять домен</item>
-    </string-array>
-    <string name="intelligent_selection">Умный выбор</string>
-    <string name="sub_setting_intelligent_selection_filter">Название фильтра умного выбора</string>
-    <string name="title_intelligent_selection_method">Принцип умного выбора</string>
-    <string-array name="intelligent_selection_method">
-        <item>Наименьшая задержка</item>
-        <item>Наименьшая нагрузка</item>
-    </string-array>
-    <string name="pre_resolving_domain">Предварительное определение домена…</string>
-
+<string name="abc_search_hint">Введите запрос</string>
+<string name="abc_searchview_description_clear">Удалить запрос</string>
+<string name="abc_searchview_description_search">Поиск</string>
+<string name="abc_searchview_description_submit">Отправить запрос</string>
+<string name="abc_searchview_description_voice">Голосовой поиск</string>
+<string name="abc_shareactionprovider_share_with">Поделиться с помощью</string>
+<string name="abc_toolbar_collapse_description">Свернуть</string>
+<string name="acquire_wake_lock">Использовать WakeLock</string>
+<string name="acquire_wake_lock_summary">Сохранять CPU включенным</string>
+<string name="action_download">СКАЧАТЬ</string>
+<string name="action_export">Экспортировать</string>
+<string name="action_export_clipboard">Экспорт в буфер обмена</string>
+<string name="action_export_err">Не удалось экспортировать.</string>
+<string name="action_export_file">Экспорт в файл</string>
+<string name="action_export_msg">Успешно экспортировано!</string>
+<string name="action_import">Импорт из буфера обмена</string>
+<string name="action_import_err">Не удалось импортировать.</string>
+<string name="action_import_file">Импортировать из файла</string>
+<string name="action_import_msg">Успешно импортировано!</string>
+<string name="action_learn_more">УЗНАТЬ БОЛЬШЕ</string>
+<string name="action_switch">Переключить</string>
+<string name="add_profile">Добавить профиль</string>
+<string name="add_profile_methods_manual_settings">Ручные настройки</string>
+<string name="add_profile_methods_scan_qr_code">Отсканировать QR-код</string>
+<string name="ads">Реклама</string>
+<string name="allow_access">Разрешить подключения из локальной сети</string>
+<string name="allow_access_sum">Привязать входящие серверы к 0.0.0.0</string>
+<string name="allow_insecure">Разрешить небезопасное подключение</string>
+<string name="allow_insecure_on_request_sum">Отключить проверку сертификатов при обновлении подписок</string>
+<string name="allow_insecure_sum">Отключить проверку сертификата. При включении эта функция настолько же безопасна как передача пароля в открытом виде</string>
+<string name="alpn">Согласование протокола уровня приложений</string>
+<string name="alter_id">Изменить ID</string>
+<string name="always_show_address">Всегда показывать адрес</string>
+<string name="always_show_address_sum">Всегда отображать адрес сервера на карте конфигурации</string>
+<string name="app_desc">Универсальный набор инструментов прокси для Android, написанный на Kotlin.</string>
+    <string name="app_name">XTrustVPN</string><string name="app_name_long">XTrustVPN для Android</string>
+<string name="app_tls_version">Минимальная версия TLS протокола</string>
+<string name="app_version">Версия</string>
+<string name="append_http_proxy">Добавить HTTP-прокси к VPN</string>
+<string name="append_http_proxy_sum">HTTP-прокси будет использоваться напрямую из (браузера / некоторых поддерживаемых приложений), без использования виртуального сетевого интерфейса (Android 10+)</string>
+<string name="apply">Применить</string>
+<string name="apps">Приложения</string>
+<string name="apps_message">%d приложений</string>
+<string name="auto">Авто</string>
+<string name="auto_connect">Автоматическое подключение</string>
+<string name="auto_connect_summary">Включить прокси при запуске/обновлении приложения, если он был запущен до этого</string>
+<string name="auto_select_proxy_apps">Автоматический выбор прокси-приложений</string>
+<string name="auto_select_proxy_apps_message">Автоматический выбор прокси-приложений приведет к очистке текущего выбора.</string>
+<string name="auto_update">Автоматическое обновление</string>
+<string name="auto_update_delay">Задержка автоматического обновления (в минутах)</string>
+<string name="backup">Бэкап</string>
+<string name="backup_groups_and_configurations">Группы и конфигурации</string>
+<string name="backup_import">Импортировать</string>
+<string name="backup_import_summary">При импорте существующие данные будут перезаписаны.</string>
+<string name="backup_importing">Импортирование…</string>
+<string name="backup_not_file">Не файл резервной копии: ожидался .json, а не %s</string>
+<string name="backup_rules">Правила маршрутизации</string>
+<string name="backup_settings">Настройки</string>
+<string name="backup_summary">Если правила маршрутизации резервируются без конфигураций, то пользовательские исходящие соединения будут потеряны.</string>
+<string name="bottomsheet_action_collapse">Свернуть нижний экран</string>
+<string name="bottomsheet_action_expand">Развернуть нижний экран</string>
+<string name="bottomsheet_action_expand_halfway">Развернуть наполовину</string>
+<string name="bottomsheet_drag_handle_clicked">Двойное нажатие на маркер перемещения</string>
+<string name="bottomsheet_drag_handle_content_description">Маркер перемещения</string>
+<string name="bypass_apps">Обход</string>
+<string name="bypass_lan_in_core">Обход LAN в ядре</string>
+<string name="cag_dns">Настройки DNS</string>
+<string name="cag_misc">Прочие настройки</string>
+<string name="cag_route">Настройки маршрута</string>
+<string name="cag_ws">Настройки WebSocket</string>
+<string name="certificates">Сертификаты</string>
+<string name="chain_settings">Настройки цепочки</string>
+<string name="character_counter_content_description">Введено символов: %1$d из %2$d</string>
+<string name="character_counter_overflowed_content_description">Превышено ограничение на количество символов (%1$d из %2$d)</string>
+<string name="check_update_no">Обновления не найдены.</string>
+<string name="check_update_preview">Проверить наличие обновлений предварительной версии</string>
+<string name="check_update_release">Проверить наличие обновлений релизнойной версии</string>
+<string name="circular_reference">Циклическая ссылка</string>
+<string name="circular_reference_sum">Маршрут не может содержать сам себя.</string>
+<string name="clear_logcat">Очистить журнал</string>
+<string name="clear_profiles">Очистить</string>
+<string name="clear_profiles_message">Вы уверены, что хотите очистить эту группу?</string>
+<string name="clear_selections">Очистить выбранное</string>
+<string name="clear_text_end_icon_content_description">Очистить текстовое поле</string>
+<string name="clear_traffic_statistics">Очистить статистику трафика</string>
+<string name="cleartext_http_warning">Передача HTTP-трафика в виде открытого текста небезопасна</string>
+<string name="clipboard_empty">Буфер обмена пуст</string>
+<string name="config_settings">Настройки конфигурации</string>
+<string name="config_type">Тип конфигурации</string>
+<string name="confirm">Подтвердить</string>
+<string name="connect">Подключиться</string>
+<string name="connecting">Подключение…</string>
+<string name="connection_test_available">HTTPS-соединение установлено за %d мс</string>
+<string name="connection_test_available_http">HTTP-соединение установлено за %d мс</string>
+<string name="connection_test_clear_results">Очистить результаты теста</string>
+<string name="connection_test_delete_unavailable">Удалить недоступные</string>
+<string name="connection_test_domain_not_found">Домен не найден</string>
+<string name="connection_test_error">Ошибка: %s</string>
+<string name="connection_test_icmp_ping_unavailable">ICMPing недоступен</string>
+<string name="connection_test_refused">В соединении отказано</string>
+<string name="connection_test_tcp_ping">TCP Пинг</string>
+<string name="connection_test_tcp_ping_unavailable">TCPing недоступен</string>
+<string name="connection_test_testing">Тестирование…</string>
+<string name="connection_test_timeout">Тайм-аут</string>
+<string name="connection_test_unreachable">Недоступен</string>
+<string name="connection_test_url">URL-адрес проверки подключения</string>
+<string name="connection_test_url_test">URL Тест</string>
+<string name="copy">Копировать</string>
+<string name="copy_toast_msg">Ссылка скопирована в буфер обмена.</string>
+<string name="create_shortcut">Создать ярлык</string>
+<string name="custom_config">Пользовательская конфигурация</string>
+<string name="custom_config_json">Пользовательская конфигурация JSON</string>
+<string name="custom_outbound_json">Пользовательский исходящий JSON</string>
+<string name="deduplication">Дедупликация</string>
+<string name="deduplication_sum">Удалить повторяющиеся конфигурации при обновлении</string>
+<string name="delete">Удалить</string>
+<string name="delete_confirm_prompt">Вы уверены, что хотите удалить этот профиль?</string>
+<string name="delete_group_prompt">Вы уверены, что хотите удалить эту группу?</string>
+<string name="delete_route_prompt">Вы уверены, что хотите удалить этот маршрут?</string>
+<string name="direct_boot_aware">Разрешить переключение на экране блокировки</string>
+<string name="direct_boot_aware_summary">Выбранная вами информация профиля будет менее защищена</string>
+<string name="direct_dns">Прямой DNS</string>
+<string name="disable">Отключить</string>
+<string name="dns_hosts">Перезапись домена</string>
+<string name="dns_routing_message">Разрешить домены в обходных маршрутах с помощью Direct DNS. Помните о потенциальных утечках DNS</string>
+<string name="document">Документы</string>
+<string name="domain_strategy">Правило разрешения доменов</string>
+<string name="domain_strategy_for_direct">Правило домена для Прямого</string>
+<string name="domain_strategy_for_remote">Правило домена для Удаленного</string>
+<string name="domain_strategy_for_server">Правило домена для Адреса сервера</string>
+<string name="donate">Пожертвовать</string>
+<string name="donate_info">Я люблю деньги</string>
+<string name="download">Скачать</string>
+<string name="early_data_header_name">Имя заголовка ранних данных</string>
+<string name="ech_config">Конфигурация ECH</string>
+<string name="edit">Редактировать</string>
+<string name="edit_config">Изменить конфигурацию</string>
+<string name="empty_route">Пустой маршрут</string>
+<string name="empty_route_notice">Установите какие-либо правила перед сохранением</string>
+<string name="enable">Включить</string>
+<string name="enable_clash_api">Включить Clash API</string>
+<string name="enable_clash_api_summary">Предоставлять панель управления Clash API и YACD по адресу 127.0.0.1:9090</string>
+<string name="enable_dns_routing">Включить маршрутизацию DNS</string>
+<string name="enable_ech">Включить ECH</string>
+<string name="enable_ech_sum">Включить зашифрованный клиент Hello</string>
+<string name="enable_fakedns">Включить FakeDNS</string>
+<string name="enable_log">Включить журнал</string>
+<string name="enable_log_sum">В целях отладки</string>
+<string name="enable_mux">Включить мультиплексор</string>
+<string name="enc_method">Метод шифрования</string>
+<string name="encryption">Шифрование</string>
+<string name="error_a11y_label">Ошибка: недопустимое значение</string>
+<string name="error_icon_content_description">Ошибка</string>
+<string name="error_title">Ошибка</string>
+<string name="expand_button_title">Дополнительно</string>
+<string name="exposed_dropdown_menu_content_description">Показать раскрывающееся меню</string>
+<string name="extra_headers">Дополнительные заголовки</string>
+<string name="fakedns_message">Может вызвать необходимость перезапуска других приложений для повторного подключения к сети после остановки прокси</string>
+<string name="file_manager_missing">На вашем устройстве отсутствует стандартный селектор файлов Android, установите его, например Material Files.</string>
+<string name="follow_system">Использовать системную тему</string>
+<string name="force_resolve">Принудительно разрешать доменные имена</string>
+<string name="force_resolve_sum">При обновлении преобразовать все доменные имена в IP-адреса. Хост и SNI будут добавлены автоматически, если это возможно</string>
+<string name="forward_success">Прокси запустился.</string>
+<string name="front_proxy">Прямой прокси</string>
+<string name="general_settings">Настройки приложения</string>
+<string name="generating">Создание…</string>
+<string name="github">Исходный код</string>
+<string name="global_allow_insecure">Всегда разрешать небезопасные</string>
+<string name="group_added">Добавлено:
+%s</string>
+<string name="group_basic">Базовый</string>
+<string name="group_changed">Обновлено: 
+%s</string>
+<string name="group_create">Создать группу</string>
+<string name="group_create_subscription">Создать подписку</string>
+<string name="group_default">Разгруппировано</string>
+<string name="group_delete_confirm_prompt">Вы уверены, что хотите удалить эту группу?</string>
+<string name="group_deleted">Удалено: 
+%s</string>
+<string name="group_diff">различия (%s)</string>
+<string name="group_duplicate">Дубликат: 
+%s</string>
+<string name="group_edit">Редактировать группу</string>
+<string name="group_edit_subscription">Редактировать подписку</string>
+<string name="group_filter">Фильтр</string>
+<string name="group_name">Имя группы</string>
+<string name="group_name_required">Требуется название группы</string>
+<string name="group_no_difference">%s: Не отличаются</string>
+<string name="group_not_subscription">Тип группы не является подпиской</string>
+<string name="group_order">Сортировка</string>
+<string name="group_order_by_delay">По задержке</string>
+<string name="group_order_by_name">По имени</string>
+<string name="group_order_origin">По источнику</string>
+<string name="group_settings">Настройки группы</string>
+<string name="group_show_diff">Сравнить группы</string>
+<string name="group_status_empty">Пустая группа</string>
+<string name="group_status_empty_subscription">Еще не обновлено</string>
+<string name="group_status_proxies">%d прокси</string>
+<string name="group_status_proxies_subscription">%d прокси | Обновлено %s</string>
+<string name="group_subscription_link">Ссылка для подписки</string>
+<string name="group_type">Тип группы</string>
+<string name="group_update">Обновить</string>
+<string name="group_updated">%s: обновлено %d прокси</string>
+<string name="grpc_service_name">Имя службы gRPC</string>
+<string name="header_type">Тип заголовка</string>
+<string name="hop_interval">Интервал переключения портов(второй)</string>
+<string name="http_host">HTTP-хост</string>
+<string name="http_path">HTTP-путь</string>
+<string name="http_upgrade_host">HTTP-хост обновления</string>
+<string name="http_upgrade_path">HTTP-путь обновления</string>
+<string name="hysteria_auth_payload">Полезные данные аутентификации</string>
+<string name="hysteria_auth_type">Тип аутентификации</string>
+<string name="hysteria_connection_receive_window">Окно получения соединения QUIC</string>
+<string name="hysteria_disable_mtu_discovery">Отключить обнаружение MTU пути</string>
+<string name="hysteria_download_mbps">Максимальная скорость загрузки (в Мбит / с)</string>
+<string name="hysteria_obfs">Обфускация пароля</string>
+<string name="hysteria_stream_receive_window">Окно приема потока QUIC</string>
+<string name="hysteria_upload_mbps">Максимальная скорость загрузки (в Мбит / с)</string>
+<string name="icon_content_description">Значок диалогового окна</string>
+<string name="ignore_battery_optimizations">Игнорировать оптимизации батареи</string>
+<string name="ignore_battery_optimizations_sum">Снять некоторые ограничения</string>
+<string name="inbound_settings">Входящие настройки</string>
+<string name="insecure">Ненадежный</string>
+<string name="install_from_fdroid">Установить с F-Droid</string>
+<string name="install_from_play_store">Установить из Play Store</string>
+<string name="invalid_backup_file">Недействительный файл резервной копии</string>
+<string name="invalid_server">Неверное имя сервера</string>
+<string name="invert_selections">Инвертировать выбранное</string>
+<string name="ipv6">Маршрут IPv6</string>
+<string name="is_outbound_only">Сделать JSON исходящим</string>
+<string name="item_view_role_description">Вкладка</string>
+<string name="key_opt">Ключ (необязательно)</string>
+<string name="landing_proxy">Обратный прокси</string>
+<string name="license">Лицензия</string>
+<string name="lines">%d строк</string>
+<string name="log_level">Тип журнала</string>
+<string name="log_level_help">Удерживайте для настройки размера буфера.</string>
+<string name="logcat">Экспорт отладочной информации</string>
+<string name="mal_close">Закрыть</string>
+<string name="material_clock_toggle_content_description">Выберите AM (до полудня) или PM (после полудня)</string>
+<string name="material_timepicker_am">AM</string>
+<string name="material_timepicker_pm">PM</string>
+<string name="menu_about">О приложении</string>
+<string name="menu_configuration">Конфигурация</string>
+<string name="menu_dashboard">Панель sing-box</string>
+<string name="menu_group">Группы</string>
+<string name="menu_log">Журналы</string>
+<string name="menu_route">Маршруты</string>
+<string name="menu_tools">Инструменты</string>
+<string name="menu_traffic">Трафик</string>
+<string name="metered">Подсказка о соединении с лимитным тарифным планом</string>
+<string name="metered_summary">Подсказывать системе, что VPN следует рассматривать как сеть с лимитным тарифным планом</string>
+<string name="minimize">Свернуть</string>
+<string name="missing_plugin">Отсутствующий плагин</string>
+<string name="move">Переместить</string>
+<string name="mtrl_badge_numberless_content_description">Новое уведомление</string>
+<string name="mtrl_checkbox_state_description_checked">Флажок установлен.</string>
+<string name="mtrl_checkbox_state_description_indeterminate">Флажки установлены частично.</string>
+<string name="mtrl_checkbox_state_description_unchecked">Флажок не установлен.</string>
+<string name="mtrl_chip_close_icon_content_description">Удалить "%1$s"</string>
+<string name="mtrl_exceed_max_badge_number_content_description">Новых уведомлений больше %1$d</string>
+<string name="mtrl_picker_a11y_next_month">Перейти к следующему месяцу</string>
+<string name="mtrl_picker_a11y_prev_month">Перейти к предыдущему месяцу</string>
+<string name="mtrl_picker_cancel">Отмена</string>
+<string name="mtrl_picker_confirm">ОК</string>
+<string name="mtrl_picker_day_of_week_column_header">Столбец со днями недели: %1$s</string>
+<string name="mtrl_picker_navigate_to_current_year_description">Перейти к текущему году: %1$d</string>
+<string name="mtrl_picker_navigate_to_year_description">Перейти к %1$s году</string>
+<string name="mtrl_picker_save">Сохранить</string>
+<string name="mtrl_picker_toggle_to_calendar_input_mode">Перейти в режим выбора дней</string>
+<string name="mtrl_picker_toggle_to_day_selection">Нажмите, чтобы перейти к выбору дня</string>
+<string name="mtrl_picker_toggle_to_text_input_mode">Перейти в режим ввода текста</string>
+<string name="mtrl_picker_toggle_to_year_selection">Нажмите, чтобы перейти к выбору года</string>
+<string name="mtu_help">Удерживайте для настройки своего MTU.</string>
+<string name="mux_concurrency">Число одновременных подключений Mux</string>
+<string name="mux_preference">Мультиплекс</string>
+<string name="mux_sum">Протокол мультиплексирования предназначен для уменьшения задержки соединения TCP, а не для увеличения пропускной способности. Использование мультиплексирования для просмотра видео, загрузки или проверки скорости обычно неэффективно. Если сервер не поддерживает мультиплексирование, вы не сможете получить доступ к Интернету.</string>
+<string name="mux_type">Протокол мультиплексирования</string>
+<string name="naive_insecure_concurrency">Небезопасный параллелизм</string>
+<string name="naive_insecure_concurrency_summary">Использовать N параллельных соединений для повышения отказоустойчивости в условиях ненадёжной сети. Большее число соединений увеличивает риск обнаружения туннелей и снижает безопасность. Этот проект стремится к максимальной защите от анализа трафика, следовательно, использование его небезопасным образом противоречит данной цели. 
+ 
+Если придётся использовать данную функцию, попробуйте N=2, чтобы проверить, решит ли это проблему. Настоятельно не рекомендуется использовать более 4 соединений.</string>
+<string name="nat_result_hint">Провести проверку NAT</string>
+<string name="nat_stun_server_hint">STUN сервер</string>
+<string name="need_reload">Перезагрузите прокси-сервис, чтобы применить изменения</string>
+<string name="need_restart">Перезапустите приложение для применения изменений</string>
+<string name="network">Сеть</string>
+<string name="network_change_reset_connections">Сбросить исходящие соединения при изменении сети</string>
+<string name="night_mode">Ночной режим</string>
+<string name="no">Нет</string>
+<string name="no_proxies_found">В ссылке не найдено прокси-серверов</string>
+<string name="no_proxies_found_in_clipboard">В буфере обмена не найдено ни одного прокси</string>
+<string name="no_proxies_found_in_file">В файле не найдено прокси-серверов</string>
+<string name="no_proxies_found_in_subscription">В подписке не найдено прокси-серверов</string>
+<string name="no_statistics">Статистики пока нет</string>
+<string name="not_connected">Не подключен</string>
+<string name="not_set">Не указано</string>
+<string name="obfs">Obfs</string>
+<string name="obfs_param">Параметры Obfs</string>
+<string name="off">Выключенный</string>
+<string name="on">Включено</string>
+<string name="only">Исключительно</string>
+<string name="ooc_warning">Предупреждение</string>
+<string name="oss_licenses">Лицензии с открытым исходным кодом</string>
+<string name="packet_encoding">Кодирование пакетов</string>
+<string name="padding">Отступ</string>
+<string name="password">Пароль</string>
+<string name="password_opt">Пароль (необязательно)</string>
+<string name="password_toggle_content_description">Показать пароль</string>
+<string name="plugin">Плагин</string>
+<string name="plugin_auto_connect_unlock_only">Этот плагин может не работать с автоподключением</string>
+<string name="plugin_configure">Настроить…</string>
+<string name="plugin_disabled">Отключено</string>
+<string name="plugin_exists_but_on_shit_system">Профиль %s требует плагин %s, но поставщик вашего проприетарного оборудования (обычно это большие компании, занимающиеся слежкой и производители вредоносного ПО) изменил ваш Android, сделав плагин непригодным для использования.</string>
+<string name="plugin_unknown">Неизвестный плагин %s</string>
+<string name="plugin_untrusted">Предупреждение: похоже, что этот плагин не из известного надежного источника.</string>
+<string name="port_http">Порт прокси HTTP</string>
+<string name="port_local_dns">Локальный порт DNS</string>
+<string name="port_proxy">Порт прокси SOCKS5</string>
+<string name="port_transproxy">Транспрокси-порт</string>
+<string name="prefer">Предпочитать</string>
+<string name="preference_copied">Текст "%1$s" скопирован в буфер обмена</string>
+<string name="preview_version_hint">Это приложение является предварительной версией и может содержать множество проблем. Если вы не хотите тестировать его, скачайте релизную версию с GitHub!</string>
+<string name="profile_config">Конфигурация профиля</string>
+<string name="profile_empty">Пожалуйста, выберите профиль</string>
+<string name="profile_import">Импортировать профиль</string>
+<string name="profile_import_message">Подтвердите, что хотите импортировать профиль %s?</string>
+<string name="profile_name">Имя профиля</string>
+<string name="profile_requiring_plugin">Профиль %s требует установки подключаемого модуля %s, но он не найден.</string>
+<string name="profile_traffic_statistics">Статистика трафика профиля</string>
+<string name="profile_traffic_statistics_summary">Когда отключено, использованный трафик не будет отображаться</string>
+<string name="project">Проект</string>
+<string name="protocol">Протокол</string>
+<string name="protocol_param">Параметры протокола</string>
+<string name="protocol_settings">Настройки протокола</string>
+<string name="protocol_version">Версия протокола</string>
+<string name="proxied_apps">Режим VPN для приложений</string>
+<string name="proxied_apps_summary">Настроить режим VPN для выбранных приложений</string>
+<string name="proxy_cat">Настройки сервера</string>
+<string name="proxy_chain">Прокси-цепочка</string>
+<string name="quick_toggle">Переключить</string>
+<string name="reboot_required">Не удалось запустить службу VPN. Возможно, вам потребуется перезагрузить устройство.</string>
+<string name="release_wake_lock">Отключить WakeLock</string>
+<string name="remote_dns">Удаленный DNS</string>
+<string name="remove_duplicate">Удалить дубликаты серверов</string>
+<string name="reset_connections">Сбросить соединения</string>
+<string name="reset_settings">Восстановить настройки по умолчанию</string>
+<string name="reset_settings_message">Восстановить настройки по умолчанию, такие данные, как узлы и группы, будут сохранены. Для полной очистки данных, очистите данные приложения непосредственно в системных настройках.</string>
+<string name="resolve_destination">Определить адрес назначения</string>
+<string name="resolve_destination_summary">Если адрес назначения является доменом, то он передается в соответствии с правилом IPv6.</string>
+<string name="route_add">Создать маршрут</string>
+<string name="route_asset_no_update">Обновлений нет</string>
+<string name="route_asset_status">Локальная версия: %s</string>
+<string name="route_asset_updated">Обновлено</string>
+<string name="route_assets">Ресурсы</string>
+<string name="route_block">Блокировать</string>
+<string name="route_bypass">Обход</string>
+<string name="route_bypass_domain">Правило домена для %s</string>
+<string name="route_bypass_ip">Правило IP для %s</string>
+<string name="route_for">Правило для %s</string>
+<string name="route_manage_assets">Управление ресурсами маршрутов</string>
+<string name="route_name">Название маршрута</string>
+<string name="route_need_vpn">Правило маршрутизации `%s` зависит от VPN, поэтому игнорируется.</string>
+<string name="route_not_asset">Не файл ресурса: ожидался .db, а не %s</string>
+<string name="route_opt_block_ads">Блокировать рекламу</string>
+<string name="route_opt_block_analysis">Блокировать аналитику</string>
+<string name="route_opt_block_quic">Блокировать QUIC</string>
+<string name="route_opt_bypass_lan">Обход LAN</string>
+<string name="route_play_store">Правило Play Store для %s</string>
+<string name="route_profile">Выбрать профиль…</string>
+<string name="route_proxy">Прокси</string>
+<string name="route_reset">Сброс</string>
+<string name="route_rules_official">Официальный</string>
+<string name="route_rules_provider">Поставщик ресурсов правил</string>
+<string name="route_warn">Перед добавлением собственных правил убедитесь, что вы прочитали документацию, иначе подключение к Интернету может не удасться.</string>
+<string name="scanning">Сканирование…</string>
+<string name="search_apps">Поиск…</string>
+<string name="search_menu_title">Поиск</string>
+<string name="searchview_clear_text_content_description">Очистить текстовое поле</string>
+<string name="searchview_navigation_content_description">Назад</string>
+<string name="security">Шифрование транспортного уровня</string>
+<string name="security_settings">Настройки безопасности</string>
+<string name="select_apps">Выберите приложения</string>
+<string name="select_profile">Выбрать профиль</string>
+<string name="server_address">Сервер</string>
+<string name="server_port">Удаленный порт</string>
+<string name="service_failed">Не удалось:</string>
+<string name="service_mode">Сервисный режим</string>
+<string name="service_mode_proxy">Только прокси</string>
+<string name="service_proxy">Прокси-сервис</string>
+<string name="service_subscription">Служба обновления подписки</string>
+<string name="service_vpn">VPN-сервис</string>
+<string name="set_panel_url">Установить URL панель</string>
+<string name="settings">Настройки</string>
+<string name="shadowsocks_plugin_simple_obfs">Simple Obfs (плагин Shadowsocks для Android)</string>
+<string name="shadowsocks_plugin_v2ray">V2Ray (плагин Shadowsocks для Android)</string>
+<string name="share">Поделиться</string>
+<string name="share_qr_nfc">QR-код</string>
+<string name="share_subscription">Поделиться подпиской</string>
+<string name="show_bottom_bar">Показать нижнюю панель, как в SagerNet</string>
+<string name="show_direct_speed">Показать прямую скорость</string>
+<string name="show_direct_speed_sum">Также в уведомлении показывать скорость трафика без прокси</string>
+<string name="show_group_in_notification">Показывать название группы в уведомлении</string>
+<string name="show_system_apps">Показать системные приложения</string>
+<string name="side_sheet_accessibility_pane_title">Боковая панель</string>
+<string name="sni">SNI (индикация имени сервера)</string>
+<string name="sniff_override">Результат проверки для адрес назначения</string>
+<string name="sniff_routing">Перехватывать результат для Маршрутизации</string>
+<string name="speed">%s/с</string>
+<string name="speed_detail">Прокси ：%1$s↑ %2$s↓ 
+\nПрямой ：%3$s↑%4$s↓</string>
+<string name="speed_interval">Интервал обновления уведомлений о скорости</string>
+<string name="ss_cat">Настройки Shadowsocks</string>
+<string name="ssh_auth_type_none">Без аутентификации</string>
+<string name="ssh_private_key">Закрытый ключ</string>
+<string name="ssh_private_key_passphrase">Парольная фраза закрытого ключа</string>
+<string name="ssh_public_key">Открытый ключ</string>
+<string name="standard">Стандарт</string>
+<string name="start">Старт</string>
+<string name="status_bar_notification_info_overflow">&gt;999</string>
+<string name="stop">Остановить</string>
+<string name="stopping">Выключение…</string>
+<string name="stun_attest_loading">Пожалуйста, подождите…</string>
+<string name="stun_test">Обнаружение поведения NAT</string>
+<string name="stun_test_summary">Определить поведение сопоставления адресов NAT и поведение фильтрации NAT в соответствии с RFC 5780 при помощи STUN.</string>
+<string name="subscription">Подписка</string>
+<string name="subscription_expire">Истекает: %s</string>
+<string name="subscription_import">Импортировать подписку</string>
+<string name="subscription_import_message">Подтвердите, что хотите импортировать подписку %s? Если вы импортируете из ненадежного источника, это может привести к утечке вашего IP-адреса и такого поведения.</string>
+<string name="subscription_settings">Настройки подписки</string>
+<string name="subscription_traffic">%s Использовано / %s Осталось</string>
+<string name="subscription_type">Тип подписки</string>
+<string name="subscription_update">Обновление подписки</string>
+<string name="subscription_update_message">Обновление %s …</string>
+<string name="subscription_used">%s Использовано</string>
+<string name="subscription_user_agent">UserAgent</string>
+<string name="subscriptions">Подписки</string>
+<string name="tcp_connections">%d TCP-соединений</string>
+<string name="tcp_keep_alive_interval">Интервал доставки пакетов TCP keep-alive</string>
+<string name="telegram">Канал обновлений в Telegram</string>
+<string name="test_concurrency">Число параллельных подключений</string>
+<string name="theme">Тема</string>
+<string name="tile_title">Переключатель</string>
+<string name="tls">Использовать TLS</string>
+<string name="tls_camouflage_settings">Настройки защиты TLS</string>
+<string name="tools_network">Сеть</string>
+<string name="traffic_sniffing">Включить анализ трафика</string>
+<string name="trojan_provider">Провайдер Trojan</string>
+<string name="tuic_congestion_controller">Контроллер перегрузки</string>
+<string name="tuic_disable_sni">Отключить SNI</string>
+<string name="tuic_reduce_rtt">Включить 0-RTT QUIC-соединение</string>
+<string name="tuic_udp_relay_mode">Режим UDP-ретранслятора</string>
+<string name="tun_implementation">Реализация TUN</string>
+<string name="udp_connections">%d UDP-соединений</string>
+<string name="unavailable">Недоступен</string>
+<string name="undo">Отменить</string>
+<string name="unsaved_changes_prompt">Есть несохраненные изменения. Сохранить?</string>
+<string name="update_all_subscription">Обновить все подписки</string>
+<string name="update_current_subscription">Обновить подписку текущей группы</string>
+<string name="update_dialog_message">Текущая версия: %1$s\nДоступная версия: %2$s\nХотите загрузить её?</string>
+<string name="update_dialog_title">Доступна новая версия</string>
+<string name="update_settings">Обновить настройки</string>
+<string name="update_subscription_warning">Прокси-сервер не подключен, вы уверены, что хотите продолжить обновление?</string>
+<string name="update_when_connected_only">Обновлять только при подключении</string>
+<string name="update_when_connected_only_sum">Предотвратить утечку IP-адреса</string>
+<string name="use_selector">Использовать селектор</string>
+<string name="username">Имя пользователя</string>
+<string name="username_opt">Имя пользователя (необязательно)</string>
+<string name="utls_fingerprint">Отпечаток uTLS</string>
+<string name="uuid">Логин пользователя</string>
+<string name="v7_preference_off">ВЫКЛ.</string>
+<string name="v7_preference_on">ВКЛ.</string>
+<string name="version_x">Версия (%s)</string>
+<string name="vpn_connected">Подключено, нажмите для проверки подключения</string>
+<string name="vpn_permission_denied">Отказано в разрешении на создание службы VPN</string>
+<string name="wake_reset_connections">Сбросить исходящие соединения при выходе из спящего режима</string>
+<string name="warp_generate">Создать конфигурацию</string>
+<string name="warp_license">CloudFlare Warp - это бесплатный VPN-провайдер WireGuard. Используя его, вы соглашаетесь с условиями использования.</string>
+<string name="wireguard_local_address">Частный адрес</string>
+<string name="wireguard_psk">Пароль сервера</string>
+<string name="wireguard_public_key">Открытый ключ сервера</string>
+<string name="ws_browser_forwarding">Пересылка через браузер</string>
+<string name="ws_browser_forwarding_sum">Перенаправьте соответствующие веб-сокеты через браузер.</string>
+<string name="ws_host">Хост WebSocket</string>
+<string name="ws_max_early_data">Максимальный объём данных</string>
+<string name="ws_path">Путь к WebSocket</string>
+<string name="xtls_flow">Flow (подпротокол VLESS)</string>
+<string name="yes">Да</string>
 </resources>
+
