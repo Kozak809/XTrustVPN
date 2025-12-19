@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
     <shortcut
-        android:enabled="true"
-        android:icon="@drawable/ic_qu_switch_24dp"
-        android:shortcutDisabledMessage="@string/app_widget_name"
-        android:shortcutId="shortcuts_switch"
-        android:shortcutLongLabel="@string/app_widget_name"
-        android:shortcutShortLabel="@string/app_widget_name">
-
+        android:icon="@drawable/ic_qu_shadowsocks_launcher"
+        android:shortcutId="toggle"
+        android:shortcutLongLabel="@string/quick_toggle"
+        android:shortcutShortLabel="@string/quick_toggle">
         <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="com.v2ray.ang.ui.ScSwitchActivity"
-            android:targetPackage="com.v2ray.ang" />
-        <categories android:name="android.shortcut.conversation" />
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.kozak.xtrustvpn.QuickToggleShortcut"
+            android:targetPackage="moe.nb4a" />
     </shortcut>
     <shortcut
-        android:enabled="true"
-        android:icon="@drawable/ic_qu_scan_24dp"
-        android:shortcutDisabledMessage="@string/menu_item_import_config_qrcode"
-        android:shortcutId="shortcuts_scan"
-        android:shortcutLongLabel="@string/menu_item_import_config_qrcode"
-        android:shortcutShortLabel="@string/menu_item_import_config_qrcode">
-
+        android:icon="@drawable/ic_qu_camera_launcher"
+        android:shortcutId="scan"
+        android:shortcutLongLabel="@string/add_profile_methods_scan_qr_code"
+        android:shortcutShortLabel="@string/add_profile_methods_scan_qr_code">
         <intent
-            android:action="android.intent.action.VIEW"
-            android:targetClass="com.v2ray.ang.ui.ScScannerActivity"
-            android:targetPackage="com.v2ray.ang" />
-        <categories android:name="android.shortcut.conversation" />
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.kozak.xtrustvpn.ui.ScannerActivity"
+            android:targetPackage="moe.nb4a" />
     </shortcut>
 </shortcuts>
+
