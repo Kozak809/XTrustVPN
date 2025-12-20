@@ -1,1 +1,1 @@
-# XTrustVPN V1.1.0
+# XTrustVPN 1.2.0

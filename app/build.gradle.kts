@@ -10,8 +10,25 @@ plugins {
 setupApp()
 
 android {
+    defaultConfig {
+        applicationId = "com.kozak.xtrustvpn"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        
+        buildConfigField("String", "API_URL", "\"https://testtrustvpnapi.matrixqweqwe1123.workers.dev/api/location/\"")
+    }
+
     compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
+    }
+    kotlinOptions {
+        jvmTarget = "17"
     }
     ksp {
         arg("room.incremental", "true")

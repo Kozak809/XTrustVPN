@@ -12,9 +12,12 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kozak.xtrustvpn.R
 import com.kozak.xtrustvpn.SagerNet
@@ -36,10 +39,9 @@ import org.json.JSONObject
 class MainActivity : ThemedActivity(), SagerConnection.Callback {
 
     lateinit var binding: LayoutMainNewBinding
-    private val client = OkHttpClient()
+    private val viewModel: MainViewModel by viewModels()
     private val scope = CoroutineScope(Dispatchers.Main + Job())
     private var selectedLocation: LocationItem? = null
-    private var isConnecting = false
     private var locatingAnimator: ObjectAnimator? = null
 
     // Country Code Mapping
@@ -96,65 +98,56 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
         setupRecycler()
         setupConnection()
         setupSettings()
-        
+
         connection.connect(this, this)
-        
+
         // Initial Fetch
         startLocatingAnimation()
-        fetchRealLocation()
+        viewModel.fetchRealLocation()
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.locationData.collect { data ->
+                        if (data != null) {
+                            stopLocatingAnimation()
+                            binding.locText.text = data.text
+                            if (data.lat != 0.0 && data.lon != 0.0) {
+                                binding.mapWebView.evaluateJavascript("setLocation(${data.lat}, ${data.lon})", null)
+                            }
+                        }
+                    }
+                }
+                launch {
+                    viewModel.uiState.collect { state ->
+                        when (state) {
+                            is MainUiState.Connecting -> {
+                                binding.statusText.text = state.status
+                                binding.btnConnect.background = getDrawable(R.drawable.bg_connect_btn_off)
+                            }
+                            is MainUiState.ConnectReady -> {
+                                binding.statusText.text = "Connecting..."
+                                val intent = VpnRequestActivity.StartService()
+                                connectLauncher.launch(null)
+                                viewModel.resetState()
+                            }
+                            is MainUiState.Error -> {
+                                Toast.makeText(this@MainActivity, "Error: ${state.message}", Toast.LENGTH_SHORT).show()
+                                binding.statusText.text = "Connection Failed"
+                                viewModel.resetState()
+                            }
+                            is MainUiState.Idle -> {
+                                // Handled by service state callback usually
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private fun setupSettings() {
-        // Auto Connect
-        binding.switchAuto.isChecked = DataStore.persistAcrossReboot
-        binding.switchAuto.setOnCheckedChangeListener { _, isChecked ->
-            DataStore.persistAcrossReboot = isChecked
-        }
-
-        // Kill Switch
-        binding.switchKill.isChecked = DataStore.configurationStore.getBoolean("killSwitch", false)
-        binding.switchKill.setOnCheckedChangeListener { _, isChecked ->
-            DataStore.configurationStore.putBoolean("killSwitch", isChecked)
-        }
-
-        // Mixed Port
-        binding.editPort.setText(DataStore.mixedPort.toString())
-        binding.editPort.addTextChangedListener {
-            val port = it.toString().toIntOrNull()
-            if (port != null && port in 1..65535) {
-                DataStore.mixedPort = port
-            }
-        }
-    }
-
-    private fun fetchRealLocation() {
-        scope.launch(Dispatchers.IO) {
-            try {
-                // Use IP-API to get City, Country format
-                val response = client.newCall(Request.Builder().url("http://ip-api.com/json").build()).execute()
-                val json = JSONObject(response.body?.string() ?: "{}")
-                val country = json.optString("country", "Unknown")
-                val city = json.optString("city", "")
-                
-                val text = if (city.isNotEmpty()) "$city, $country" else country
-                
-                val lat = json.optDouble("lat", 0.0)
-                val lon = json.optDouble("lon", 0.0)
-
-                withContext(Dispatchers.Main) {
-                    stopLocatingAnimation()
-                    binding.locText.text = text
-                    if (lat != 0.0 && lon != 0.0) {
-                        binding.mapWebView.evaluateJavascript("setLocation($lat, $lon)", null)
-                    }
-                }
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    stopLocatingAnimation()
-                    binding.locText.text = "Location not found"
-                }
-            }
-        }
+        // Settings are now handled by SettingsPreferenceFragment in layout XML
     }
 
     private fun startLocatingAnimation() {
@@ -181,7 +174,7 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
         binding.mapWebView.webViewClient = WebViewClient()
         binding.mapWebView.loadUrl("file:///android_asset/map.html")
     }
-    
+
     private fun updateMap(item: LocationItem) {
         binding.locText.text = item.name
         binding.mapWebView.evaluateJavascript("setLocation(${item.lat}, ${item.lng})", null)
@@ -192,13 +185,13 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
             binding.tabHome.visibility = if (selected == 0) View.VISIBLE else View.GONE
             binding.tabLoc.visibility = if (selected == 1) View.VISIBLE else View.GONE
             binding.tabSet.visibility = if (selected == 2) View.VISIBLE else View.GONE
-            
+
             binding.iconHome.setColorFilter(if(selected==0) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
             binding.textHome.setTextColor(if(selected==0) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
-            
+
             binding.iconLoc.setColorFilter(if(selected==1) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
             binding.textLoc.setTextColor(if(selected==1) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
-            
+
             binding.iconSet.setColorFilter(if(selected==2) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
             binding.textSet.setTextColor(if(selected==2) getColor(R.color.primary_blue) else getColor(R.color.text_gray))
         }
@@ -206,7 +199,7 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
         binding.navHome.setOnClickListener { updateNav(0) }
         binding.navLoc.setOnClickListener { updateNav(1) }
         binding.navSet.setOnClickListener { updateNav(2) }
-        
+
         // Default
         updateNav(0)
     }
@@ -214,100 +207,52 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
     private fun setupRecycler() {
         val adapter = LocationAdapter(locations) { item ->
             selectedLocation = item
-            updateMap(item)
-            stopLocatingAnimation()
             binding.navHome.performClick()
-            
+            startLocatingAnimation()
+
             // Auto connect logic
             if (DataStore.serviceState.connected) {
-               SagerNet.stopService()
-               scope.launch {
-                   delay(1000) // Give it a second to stop
-                   connectToLocation()
-               }
+                SagerNet.stopService()
+                scope.launch {
+                    delay(1000) // Give it a second to stop
+                    viewModel.connectToLocation(item)
+                }
             } else {
-               connectToLocation()
+                viewModel.connectToLocation(item)
             }
         }
         binding.recyclerLoc.layoutManager = LinearLayoutManager(this)
         binding.recyclerLoc.adapter = adapter
-        
+
         binding.search.addTextChangedListener {
             adapter.filter(it.toString())
         }
     }
-    
+
     private fun setupConnection() {
         binding.btnConnect.setOnClickListener {
-            if (isConnecting) return@setOnClickListener
-            
+            // Check UI State to prevent double clicks
+            if (viewModel.uiState.value is MainUiState.Connecting) return@setOnClickListener
+
             if (DataStore.serviceState.connected) {
                 SagerNet.stopService()
             } else {
-                connectToLocation()
+                val loc = selectedLocation
+                if (loc != null) {
+                    viewModel.connectToLocation(loc)
+                } else {
+                    Toast.makeText(this, "Please select a location first", Toast.LENGTH_SHORT).show()
+                    binding.navLoc.performClick()
+                }
             }
         }
     }
 
-    private fun connectToLocation() {
-        val loc = selectedLocation ?: return
-        isConnecting = true
-        binding.statusText.text = "Fetching keys..."
-        binding.btnConnect.background = getDrawable(R.drawable.bg_connect_btn_off) // Loading state?
-        
-        scope.launch(Dispatchers.IO) {
-            try {
-                val code = loc.code
-                val url = "https://testtrustvpnapi.matrixqweqwe1123.workers.dev/api/location/$code"
-                val request = Request.Builder().url(url).build()
-                val response = client.newCall(request).execute()
-                
-                if (!response.isSuccessful) throw Exception("API Error: ${response.code}")
-                
-                val json = response.body?.string() ?: throw Exception("Empty response")
-                val jsonObject = JSONObject(json)
-                val keys = jsonObject.getJSONArray("keys")
-                
-                if (keys.length() == 0) throw Exception("No keys found")
-                
-                // Try first key for now
-                val keyBase64 = keys.getString(0)
-                val key = try {
-                     String(android.util.Base64.decode(keyBase64, android.util.Base64.DEFAULT))
-                } catch (e: Exception) {
-                    keyBase64
-                }
-                
-                val profiles = parseProxies(key)
-                if (profiles.isEmpty()) throw Exception("Invalid profile config")
-                
-                val profile = profiles[0]
-                profile.name = "${loc.name} (Auto)"
-                
-                val entity = ProfileManager.createProfile(DataStore.selectedGroupForImport(), profile)
-                DataStore.selectedProxy = entity.id
-                
-                withContext(Dispatchers.Main) {
-                    binding.statusText.text = "Connecting..."
-                     val intent = VpnRequestActivity.StartService()
-                     connectLauncher.launch(null)
-                }
-                
-            } catch (e: Exception) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                    binding.statusText.text = "Connection Failed"
-                    isConnecting = false
-                }
-            }
-        }
-    }
-    
     private val connectLauncher = registerForActivityResult(VpnRequestActivity.StartService()) {
         if (it) {
-             Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
-             isConnecting = false
-             binding.statusText.text = "Disconnected"
+            Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+            viewModel.resetState()
+            binding.statusText.text = "Disconnected"
         } else {
             // Success (service starting)
         }
@@ -334,13 +279,16 @@ class MainActivity : ThemedActivity(), SagerConnection.Callback {
 
     private fun changeState(state: BaseService.State, msg: String? = null) {
         DataStore.serviceState = state
-        isConnecting = false
         
         when (state) {
             BaseService.State.Connected -> {
                 binding.btnConnect.background = getDrawable(R.drawable.bg_connect_btn_on)
                 binding.statusDot.background = getDrawable(R.drawable.bg_dot_on)
                 binding.statusText.text = "Connected"
+                selectedLocation?.let {
+                    updateMap(it)
+                    stopLocatingAnimation()
+                }
             }
             BaseService.State.Stopping, BaseService.State.Idle -> {
                 binding.btnConnect.background = getDrawable(R.drawable.bg_connect_btn_off)
