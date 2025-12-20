@@ -152,80 +152,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="gone">
-            
-             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="CONNECTION"
-                android:textColor="@color/text_gray"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="10dp"/>
 
-            <!-- Auto Connect -->
-            <LinearLayout
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/settingsFragmentContainer"
+                android:name="com.kozak.xtrustvpn.ui.SettingsPreferenceFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_item_normal"
-                android:padding="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Auto Connect"
-                    android:textColor="@color/white"/>
-                <Switch
-                    android:id="@+id/switchAuto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            
-            <!-- Kill Switch -->
-             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_item_normal"
-                android:padding="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Kill Switch"
-                    android:textColor="@color/white"/>
-                <Switch
-                    android:id="@+id/switchKill"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <!-- Mixed Port -->
-             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_item_normal"
-                android:padding="16dp"
-                android:gravity="center_vertical"
-                android:layout_marginBottom="10dp">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Mixed Port"
-                    android:textColor="@color/white"/>
-                <EditText
-                    android:id="@+id/editPort"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:textColor="@color/white"
-                    android:gravity="end"
-                    android:background="@null"
-                    android:text="2080"/>
-            </LinearLayout>
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
